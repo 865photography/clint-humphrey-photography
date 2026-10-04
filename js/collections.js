@@ -1,34 +1,18 @@
 /* Collection metadata — Clint Humphrey Photography.
  * COLLECTIONS (slug -> display name) is defined in js/products-new.js.
- * This file adds cover images and blurbs for the 9 collections. */
+ * This file adds cover images and blurbs for the 5 collections. */
 
 const COLLECTION_META = {
   "wildlife": {
     image: "images/sunset-silhouette.jpg",
     blurb: "Birds of prey at the decisive moment — the dive, the strike, the catch."
   },
-  "main-street": {
-    image: "images/new/castle-at-dusk.jpg",
-    blurb: "Main Street at its most cinematic — castles, marquees, and neon after dark."
-  },
-  "parade": {
-    image: "images/new/pixie-dust.jpg",
-    blurb: "Parade day, frozen mid-wave — characters in full flight down the route."
-  },
-  "galaxys-edge": {
-    image: "images/new/tie-sunset.jpg",
-    blurb: "Batuu at golden hour — starships, spires, and desert light."
-  },
-  "rides": {
-    image: "images/new/monorail.jpg",
-    blurb: "The park in motion — monorails, coasters, and midway color."
-  },
   "americana": {
     image: "images/new/the-getaway.jpg",
     blurb: "Roadside America — chrome, neon, and weathered paint."
   },
   "golden-hour": {
-    image: "images/new/still-water.jpg",
+    image: "images/new/last-cast.jpg",
     blurb: "The last light of the day, held on water and glass."
   },
   "on-the-wing": {
@@ -41,13 +25,13 @@ const COLLECTION_META = {
   }
 };
 
-/* The 9 collections in display order. */
+/* The 5 collections in display order. */
 const COLLECTION_ORDER = [
-  "wildlife", "main-street", "parade", "galaxys-edge", "rides",
+  "wildlife", "rides",
   "americana", "golden-hour", "on-the-wing", "wild-portraits"
 ];
 
-/* Merged catalog: existing 16 (collection 'wildlife') + 52 new. */
+/* Merged catalog: existing 16 (collection 'wildlife') + 14 new. */
 const ALL_PRODUCTS = (() => {
   const out = {};
   for (const [id, p] of Object.entries(PRODUCTS)) {
