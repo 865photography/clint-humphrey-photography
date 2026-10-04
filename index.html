@@ -25,50 +25,10 @@
   </div>
 </header>
 
-<div id="groups" style="padding-top:64px"></div>
-
-<section class="band">
-  <h2>Printed like it matters.</h2>
-  <p>Every print is produced to order from the original high-resolution file — never warehoused, never a stock photo. Each photograph is offered only in the sizes its resolution honestly supports, so what arrives on your wall is always sharp.</p>
-  <div class="sig">— Clint Humphrey</div>
-  <div class="trio">
-    <div class="item">
-      <div class="num">01</div>
-      <h3>Choose your print</h3>
-      <p>Pick the image, size, and finish — poster, framed, or gallery canvas.</p>
-    </div>
-    <div class="item">
-      <div class="num">02</div>
-      <h3>Check out securely</h3>
-      <p>Pay by card through Stripe. Your payment details never touch this site.</p>
-    </div>
-    <div class="item">
-      <div class="num">03</div>
-      <h3>Printed &amp; shipped</h3>
-      <p>A professional lab prints to order and ships to your door with tracking.</p>
-    </div>
-  </div>
-</section>
+<div id="groups" style="padding-top:84px"></div>
 
 <footer class="site">
   <div class="wrap wide">
-    <div class="cols">
-      <div>
-        <div class="brandline">Clint Humphrey Photography</div>
-        <p>Fine-art prints from original frames. Printed to order and shipped worldwide.</p>
-      </div>
-      <div>
-        <h5>Collections</h5>
-        <ul id="foot-colls"></ul>
-      </div>
-      <div>
-        <h5>Studio</h5>
-        <ul>
-          <li><a href="gallery.html">All prints</a></li>
-          <li><a href="about.html">About the photographer</a></li>
-        </ul>
-      </div>
-    </div>
     <div class="base">
       <span>© 2026 Clint Humphrey Photography. All images copyright the artist.</span>
       <span>Printed to order · Shipped worldwide</span>
@@ -80,7 +40,6 @@
 <script src="js/products-new.js"></script>
 <script src="js/collections.js"></script>
 <script>
-  // Homepage: collection groups as large cards, like the reference
   const groupsEl = document.getElementById('groups');
   COLLECTION_GROUPS.forEach(g => {
     let html = `<h2 class="section-title">${g.name}</h2><div class="coll-grid">`;
@@ -92,16 +51,10 @@
         <a class="coll-card" href="gallery.html?c=${slug}">
           <img loading="lazy" src="${meta.image}" alt="${collectionName(slug)}">
           <div class="card-label">${collectionName(slug)}</div>
-          <div class="card-sub">${n} prints</div>
         </a>`;
     });
     html += `</div>`;
     groupsEl.innerHTML += html;
-  });
-
-  const foot = document.getElementById('foot-colls');
-  COLLECTION_ORDER.forEach(slug => {
-    foot.innerHTML += `<li><a href="gallery.html?c=${slug}">${collectionName(slug)}</a></li>`;
   });
 </script>
 </body>
