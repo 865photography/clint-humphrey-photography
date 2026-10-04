@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio Upload — Clint Humphrey Photography</title>
+<meta name="description" content="Private upload page for Clint Humphrey Photography.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Clint Humphrey <span>Photography</span></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Prints</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="studio">
+  <div class="kicker">Private</div>
+  <h1>Studio upload</h1>
+  <p class="lede">Full-resolution originals go straight into the studio’s incoming folder. This page isn’t linked anywhere — keep the address to yourself.</p>
+
+  <div class="field">
+    <label for="pw">Studio password</label>
+    <input type="password" id="pw" autocomplete="off" placeholder="••••••••">
+  </div>
+
+  <div class="field">
+    <label for="files">Photographs</label>
+    <input type="file" id="files" accept="image/*" multiple>
+  </div>
+
+  <button class="btn wide" id="go">Upload</button>
+
+  <div id="list" style="margin-top:28px"></div>
+</div>
+
+<script>
+const CHUNK = 2.5 * 1024 * 1024; // 2.5MB binary -> ~3.4MB base64, under Vercel's 4.5MB body limit
+
+const pwEl = document.getElementById('pw');
+const filesEl = document.getElementById('files');
+const goEl = document.getElementById('go');
+const listEl = document.getElementById('list');
+
+// remember the password for this tab only
+if (sessionStorage.getItem('studio_pw')) pwEl.value = sessionStorage.getItem('studio_pw');
+pwEl.addEventListener('input', () => sessionStorage.setItem('studio_pw', pwEl.value));
+
+function sliceB64(file, start, end) {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve(r.result.split(',')[1]);
+    r.onerror = reject;
+    r.readAsDataURL(file.slice(start, end));
+  });
+}
+
+async function uploadOne(file, ui) {
+  const password = pwEl.value;
+  if (!password) throw new Error('Enter the studio password first.');
+  const total = Math.max(1, Math.ceil(file.size / CHUNK));
+  const uploadId = 'u' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  const blobShas = [];
+
+  for (let i = 0; i < total; i++) {
+    const chunk = await sliceB64(file, i * CHUNK, Math.min(file.size, (i + 1) * CHUNK));
+    const res = await fetch('/api/upload-part', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ uploadId, index: i, total, chunk })
+    });
+    if (!res.ok) throw new Error('Part ' + (i + 1) + '/' + total + ' failed (HTTP ' + res.status + ').');
+    const data = await res.json();
+    if (!data.sha) throw new Error('Part ' + (i + 1) + ' returned no blob SHA.');
+    blobShas.push(data.sha);
+    ui.bar.style.width = Math.round(((i + 1) / total) * 100) + '%';
+    ui.st.textContent = 'Uploading… ' + (i + 1) + ' / ' + total;
+  }
+
+  ui.st.textContent = 'Assembling…';
+  const fin = await fetch('/api/upload-finish', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password, filename: file.name, contentType: file.type || 'application/octet-stream', blobShas })
+  });
+  if (!fin.ok) {
+    const t = await fin.text();
+    throw new Error('Finish failed (HTTP ' + fin.status + '): ' + t.slice(0, 120));
+  }
+  const done = await fin.json();
+  ui.bar.style.width = '100%';
+  ui.st.textContent = 'Done → ' + done.path;
+  ui.st.className = 'st ok';
+}
+
+goEl.onclick = async () => {
+  const files = Array.from(filesEl.files || []);
+  if (!files.length) { alert('Choose at least one photograph first.'); return; }
+  if (!pwEl.value) { alert('Enter the studio password first.'); return; }
+  goEl.disabled = true;
+  listEl.innerHTML = '';
+  for (const file of files) {
+    const div = document.createElement('div');
+    div.className = 'up-item';
+    div.innerHTML = `<div class="nm"></div><div class="bar"><i></i></div><div class="st">Waiting…</div>`;
+    div.querySelector('.nm').textContent = file.name + ' (' + (file.size / 1048576).toFixed(1) + ' MB)';
+    listEl.appendChild(div);
+    const ui = {
+      bar: div.querySelector('.bar i'),
+      st: div.querySelector('.st')
+    };
+    try {
+      await uploadOne(file, ui);
+    } catch (err) {
+      ui.st.textContent = 'Failed: ' + err.message;
+      ui.st.className = 'st err';
+    }
+  }
+  goEl.disabled = false;
+};
+</script>
+</body>
+</html>

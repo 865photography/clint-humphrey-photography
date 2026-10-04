@@ -4,6 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Print — Clint Humphrey Photography</title>
+<meta name="description" content="A fine-art print by Clint Humphrey, printed to order on fine-art paper.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clint Humphrey Photography">
+<meta id="og-title" property="og:title" content="Print — Clint Humphrey Photography">
+<meta id="og-desc" property="og:description" content="A fine-art print by Clint Humphrey.">
+<meta id="og-image" property="og:image" content="https://clint-humphrey-photography.vercel.app/images/new/amber-eye.jpg">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -23,11 +29,15 @@
   <div class="product">
     <div>
       <a class="back" href="gallery.html">← All prints</a>
-      <div class="viewer"><img id="pimg" src="" alt=""></div>
+      <div class="viewer" id="viewer">
+        <img id="pimg" src="" alt="">
+        <div class="hint">Click to view full-screen</div>
+      </div>
     </div>
     <div>
       <h1 id="ptitle"></h1>
-      <div class="sub" id="pbadge"></div>
+      <div class="pcoll" id="pcoll"></div>
+      <div class="tagline" id="ptagline"></div>
       <p class="story" id="pstory"></p>
 
       <div class="opt-label">Choose a size &amp; finish</div>
@@ -41,13 +51,25 @@
       <div class="fineprint">
         <h4>The details</h4>
         <ul>
-          <li>Printed to order on fine-art paper by a professional lab.</li>
+          <li>Printed to order from the original high-resolution file — never warehoused.</li>
+          <li>Fine-art paper, produced by a professional print lab.</li>
           <li id="maxnote"></li>
-          <li>Ships rolled or flat-packed with tracking, worldwide.</li>
-          <li>Made to order — if your print arrives damaged or misprinted, contact us and we\'ll make it right.</li>
+          <li>Ships worldwide with tracking, packed to survive the journey.</li>
+          <li>Made to order — if your print arrives damaged or misprinted, contact us and we’ll make it right.</li>
         </ul>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Full-screen image viewer">
+  <button class="lb-close" id="lb-close">Close · Esc</button>
+  <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous">‹</button>
+  <img class="stage" id="lb-img" src="" alt="">
+  <button class="lb-btn lb-next" id="lb-next" aria-label="Next">›</button>
+  <div class="lb-cap">
+    <div class="t" id="lb-title"></div>
+    <div class="lb-count" id="lb-count"></div>
   </div>
 </div>
 
@@ -61,16 +83,25 @@
 </footer>
 
 <script src="js/site.js"></script>
+<script src="js/products-new.js"></script>
+<script src="js/collections.js"></script>
 <script>
   const id = new URLSearchParams(location.search).get('id');
-  const p = PRODUCTS[id];
+  const p = ALL_PRODUCTS[id];
   if (!p) { location.href = 'gallery.html'; }
 
+  // SEO per product
   document.title = p.title + ' — Clint Humphrey Photography';
+  document.querySelector('meta[name="description"]').content = p.tagline + ' Fine-art print, printed to order.';
+  document.getElementById('og-title').content = p.title + ' — Clint Humphrey Photography';
+  document.getElementById('og-desc').content = p.tagline;
+  document.getElementById('og-image').content = 'https://clint-humphrey-photography.vercel.app/' + p.image;
+
   document.getElementById('pimg').src = p.image;
   document.getElementById('pimg').alt = p.title;
   document.getElementById('ptitle').textContent = p.title;
-  document.getElementById('pbadge').textContent = p.tagline;
+  document.getElementById('pcoll').textContent = collectionName(p.collection);
+  document.getElementById('ptagline').textContent = p.tagline;
   document.getElementById('pstory').textContent = p.story;
   document.getElementById('maxnote').textContent = p.maxNote;
 
@@ -88,18 +119,79 @@
       sizesEl.appendChild(b);
     });
     const o = p.options[selected];
-    buyBtn.textContent = `Buy — ${o.label} · $${o.price}`;
-    buyBtn.href = o.stripe && o.stripe !== '#' ? o.stripe : '#';
-    if (!o.stripe || o.stripe === '#') {
+    const live = o.stripe && o.stripe !== '#';
+    if (live) {
+      buyBtn.textContent = `Buy — ${o.label} · $${o.price}`;
+      buyBtn.href = o.stripe;
+      buyBtn.className = 'btn wide';
+      buyBtn.onclick = null;
+    } else {
+      buyBtn.textContent = 'Available Soon';
+      buyBtn.href = '#';
+      buyBtn.className = 'btn wide soon';
       buyBtn.onclick = (e) => {
         e.preventDefault();
-        alert('Checkout is being connected — this print will be purchasable at launch.');
+        alert('Checkout is being connected for this print.');
       };
-    } else {
-      buyBtn.onclick = null;
     }
   }
   render();
+
+  /* ---------- lightbox: navigate within the product's collection ---------- */
+  const peers = Object.entries(ALL_PRODUCTS)
+    .filter(([pid, prod]) => prod.collection === p.collection)
+    .map(([pid]) => pid);
+  let lbIndex = peers.indexOf(id);
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbTitle = document.getElementById('lb-title');
+  const lbCount = document.getElementById('lb-count');
+
+  function lbShow() {
+    const pid = peers[lbIndex];
+    const prod = ALL_PRODUCTS[pid];
+    lbImg.src = prod.image;
+    lbImg.alt = prod.title;
+    lbTitle.textContent = prod.title;
+    lbCount.textContent = (lbIndex + 1) + ' / ' + peers.length;
+  }
+  function lbOpen() {
+    lbIndex = peers.indexOf(id);
+    lbShow();
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function lbClose() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function lbStep(d) {
+    lbIndex = (lbIndex + d + peers.length) % peers.length;
+    lbShow();
+  }
+
+  document.getElementById('viewer').onclick = lbOpen;
+  document.getElementById('lb-close').onclick = lbClose;
+  document.getElementById('lb-prev').onclick = (e) => { e.stopPropagation(); lbStep(-1); };
+  document.getElementById('lb-next').onclick = (e) => { e.stopPropagation(); lbStep(1); };
+  lb.onclick = (e) => { if (e.target === lb) lbClose(); };
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') lbClose();
+    if (e.key === 'ArrowLeft') lbStep(-1);
+    if (e.key === 'ArrowRight') lbStep(1);
+  });
+
+  // touch swipe
+  let touchX = null;
+  lb.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 60) lbStep(dx > 0 ? -1 : 1);
+    touchX = null;
+  }, { passive: true });
 </script>
 </body>
 </html>
