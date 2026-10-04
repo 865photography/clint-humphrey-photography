@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photograph — Clint Humphrey Photography</title>
+<meta name="description" content="Fine-art wildlife print by Clint Humphrey. Made to order from the original high-resolution file.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clint Humphrey Photography">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#photo-info">Skip to details</a>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">Clint Humphrey<small>Photography</small></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="gallery.html">Gallery</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="photo-layout">
+    <div>
+      <div class="photo-stage" id="stage" role="button" tabindex="0" aria-label="View larger">
+        <img id="photo-img" src="" alt="">
+      </div>
+      <noscript><p style="color:var(--muted)">Enable JavaScript to view this photograph, or <a href="gallery.html">browse the gallery</a>.</p></noscript>
+    </div>
+    <div class="photo-info" id="photo-info">
+      <h1 id="p-title">Photograph</h1>
+      <p class="tagline" id="p-tagline"></p>
+      <p class="story" id="p-story"></p>
+      <dl class="photo-facts">
+        <div style="display:flex;gap:10px"><dt class="k">Collection</dt><dd style="margin:0" id="p-collection"></dd></div>
+        <div style="display:flex;gap:10px"><dt class="k">Format</dt><dd style="margin:0" id="p-badge"></dd></div>
+      </dl>
+      <div class="buy-box">
+        <h2>Prints</h2>
+        <p class="note" id="p-maxnote"></p>
+        <div id="options"></div>
+        <p class="note" style="margin-top:14px">Each print is produced to order by a professional lab and shipped with tracking. Secure checkout via Stripe.</p>
+      </div>
+    </div>
+  </div>
+  <nav class="prevnext" id="prevnext" aria-label="More photographs"></nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 Clint Humphrey Photography. All images copyright the artist.</p>
+    <nav aria-label="Footer">
+      <a href="gallery.html">Gallery</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var id = new URLSearchParams(location.search).get('id');
+    var p = id && CHP.products[id];
+    if (!p) {
+      document.getElementById('p-title').textContent = 'Photograph not found';
+      document.getElementById('p-story').textContent = '';
+      document.querySelector('.buy-box').style.display = 'none';
+      document.getElementById('stage').style.display = 'none';
+      var back = document.createElement('p');
+      back.innerHTML = '<a href="gallery.html">Back to the gallery</a>';
+      document.getElementById('photo-info').appendChild(back);
+      return;
+    }
+
+    document.title = p.title + ' — Clint Humphrey Photography';
+    var img = document.getElementById('photo-img');
+    img.src = p.image;
+    img.alt = p.title;
+    document.getElementById('p-title').textContent = p.title;
+    document.getElementById('p-tagline').textContent = p.tagline || '';
+    document.getElementById('p-story').textContent = p.story || '';
+    document.getElementById('p-collection').innerHTML =
+      '<a href="gallery.html?c=' + encodeURIComponent(p.collection) + '">' +
+      CHPApp.esc(CHP.collections[p.collection].name) + '</a>';
+    document.getElementById('p-badge').textContent = p.badge || '';
+    document.getElementById('p-maxnote').textContent = p.maxNote || '';
+
+    var opts = document.getElementById('options');
+    opts.innerHTML = p.options.map(function (o) {
+      var buy = (o.stripe && o.stripe !== '#')
+        ? '<a class="buy-btn" href="' + CHPApp.esc(o.stripe) + '" target="_blank" rel="noopener">Buy</a>'
+        : '<span class="buy-btn" aria-disabled="true" style="opacity:0.4;cursor:default">Soon</span>';
+      return '<div class="option"><div class="what"><strong>' + CHPApp.esc(o.label) + '</strong>' +
+        '<span>' + CHPApp.esc(o.detail) + '</span></div>' +
+        '<span class="price">' + CHPApp.money(o.price) + '</span>' + buy + '</div>';
+    }).join('');
+
+    // Lightbox on stage click
+    var pairs = [[id, p]];
+    var stage = document.getElementById('stage');
+    function open() { CHPApp.openLightbox(pairs, 0); }
+    stage.addEventListener('click', open);
+    stage.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+
+    // Prev / next across catalog order
+    var order = CHP.order;
+    var i = order.indexOf(id);
+    var prev = order[(i - 1 + order.length) % order.length];
+    var next = order[(i + 1) % order.length];
+    function pnLink(otherId, label, rel) {
+      var op = CHP.products[otherId];
+      return '<a href="photo.html?id=' + encodeURIComponent(otherId) + '" rel="' + rel + '">' +
+        (rel === 'prev' ? '<span aria-hidden="true">&larr;</span>' : '') +
+        '<img loading="lazy" src="' + CHPApp.esc(op.image) + '" alt="">' +
+        '<span>' + CHPApp.esc(label) + ': ' + CHPApp.esc(op.title) + '</span>' +
+        (rel === 'next' ? '<span aria-hidden="true">&rarr;</span>' : '') + '</a>';
+    }
+    document.getElementById('prevnext').innerHTML =
+      pnLink(prev, 'Previous', 'prev') + pnLink(next, 'Next', 'next');
+  });
+</script>
+</body>
+</html>
