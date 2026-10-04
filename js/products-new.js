@@ -181,22 +181,6 @@ const NEW_PRODUCTS = {
       { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
     ],
   },
-  'the-cardinal': {
-    title: "The Cardinal",
-    tagline: "Crimson against a soft sky.",
-    story: "A northern cardinal in full crimson, beak like a sealing-wax stamp \u2014 the backyard bird as fine art.",
-    image: "images/new/the-cardinal.jpg",
-    collection: "on-the-wing",
-    badge: "Large format ready",
-    maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
-    options: [
-      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
-    ],
-  },
   'the-getaway': {
     title: "The Getaway",
     tagline: "A '60s coupe idles outside the garage.",
