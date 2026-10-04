@@ -12,11 +12,11 @@ const NEW_PRODUCTS = {
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
-      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
+      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: 'https://buy.stripe.com/7sY5kCb8Uawh9P3cI23Ru14' },
+      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: 'https://buy.stripe.com/7sYdR85OAdIt8KZ6jE3Ru15' },
+      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: 'https://buy.stripe.com/00w8wO0ug33P0et5fA3Ru16' },
+      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: 'https://buy.stripe.com/6oUbJ04Kw9sde5j37s3Ru17' },
+      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: 'https://buy.stripe.com/3cI28q7WI1ZLgdr0Zk3Ru18' },
     ],
   },
   'soaring': {
@@ -28,9 +28,9 @@ const NEW_PRODUCTS = {
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [
-      { label: "8 \u00d7 10 in", detail: "Fine-art poster, unframed", price: 500, stripe: '#' },
-      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: '#' },
-      { label: "11 \u00d7 14 in", detail: "Framed print, black wood", price: 1100, stripe: '#' },
+      { label: "8 \u00d7 10 in", detail: "Fine-art poster, unframed", price: 500, stripe: 'https://buy.stripe.com/00w9AS2CobAl1ixcI23Ru19' },
+      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: 'https://buy.stripe.com/aFa28qb8U5bX0etdM63Ru1a' },
+      { label: "11 \u00d7 14 in", detail: "Framed print, black wood", price: 1100, stripe: 'https://buy.stripe.com/eVq28qfpaeMxbXbcI23Ru1b' },
     ],
   },
   'the-commute': {
@@ -42,9 +42,9 @@ const NEW_PRODUCTS = {
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [
-      { label: "8 \u00d7 10 in", detail: "Fine-art poster, unframed", price: 500, stripe: '#' },
-      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: '#' },
-      { label: "11 \u00d7 14 in", detail: "Framed print, black wood", price: 1100, stripe: '#' },
+      { label: "8 \u00d7 10 in", detail: "Fine-art poster, unframed", price: 500, stripe: 'https://buy.stripe.com/6oU8wO6SEeMx8KZ6jE3Ru1c' },
+      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: 'https://buy.stripe.com/eVq8wOel69sd6CRdM63Ru1d' },
+      { label: "11 \u00d7 14 in", detail: "Framed print, black wood", price: 1100, stripe: 'https://buy.stripe.com/28E6oG2Co0VHe5jazU3Ru1e' },
     ],
   },
   'wings-up': {
@@ -56,9 +56,9 @@ const NEW_PRODUCTS = {
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [
-      { label: "8 \u00d7 10 in", detail: "Fine-art poster, unframed", price: 500, stripe: '#' },
-      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: '#' },
-      { label: "11 \u00d7 14 in", detail: "Framed print, black wood", price: 1100, stripe: '#' },
+      { label: "8 \u00d7 10 in", detail: "Fine-art poster, unframed", price: 500, stripe: 'https://buy.stripe.com/00w5kCb8UeMxbXbazU3Ru1f' },
+      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: 'https://buy.stripe.com/aFa28qgteeMx8KZfUe3Ru1g' },
+      { label: "11 \u00d7 14 in", detail: "Framed print, black wood", price: 1100, stripe: 'https://buy.stripe.com/6oUcN4el60VH3qFgYi3Ru1h' },
     ],
   },
   'delivery': {
@@ -70,9 +70,9 @@ const NEW_PRODUCTS = {
     badge: "Up to 16 \u00d7 20",
     maxNote: "Available up to 16\u00d720.",
     options: [
-      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: '#' },
-      { label: "16 \u00d7 20 in", detail: "Fine-art poster, unframed", price: 850, stripe: '#' },
-      { label: "16 \u00d7 20 in", detail: "Framed print, black wood", price: 1400, stripe: '#' },
+      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: 'https://buy.stripe.com/14A7sKgtecEpaT737s3Ru1i' },
+      { label: "16 \u00d7 20 in", detail: "Fine-art poster, unframed", price: 850, stripe: 'https://buy.stripe.com/28EdR87WIcEp5yNazU3Ru1j' },
+      { label: "16 \u00d7 20 in", detail: "Framed print, black wood", price: 1400, stripe: 'https://buy.stripe.com/28E8wOb8U7k53qFfUe3Ru1k' },
     ],
   },
   'the-crane': {
@@ -84,11 +84,11 @@ const NEW_PRODUCTS = {
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
-      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
+      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: 'https://buy.stripe.com/aFabJ04KwbAl2mBeQa3Ru1l' },
+      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: 'https://buy.stripe.com/3cI9AS6SEawh7GV4bw3Ru1m' },
+      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: 'https://buy.stripe.com/9B600i90M33P8KZ37s3Ru1n' },
+      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: 'https://buy.stripe.com/00w14mfpa1ZLf9n6jE3Ru1o' },
+      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: 'https://buy.stripe.com/eVq4gy2CocEp9P34bw3Ru1p' },
     ],
   },
   'killdeer': {
@@ -100,9 +100,9 @@ const NEW_PRODUCTS = {
     badge: "Up to 16 \u00d7 20",
     maxNote: "Available up to 16\u00d720.",
     options: [
-      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: '#' },
-      { label: "16 \u00d7 20 in", detail: "Fine-art poster, unframed", price: 850, stripe: '#' },
-      { label: "16 \u00d7 20 in", detail: "Framed print, black wood", price: 1400, stripe: '#' },
+      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: 'https://buy.stripe.com/4gM28qb8U9sd0etgYi3Ru1q' },
+      { label: "16 \u00d7 20 in", detail: "Fine-art poster, unframed", price: 850, stripe: 'https://buy.stripe.com/4gM14mfpaawhd1f8rM3Ru1r' },
+      { label: "16 \u00d7 20 in", detail: "Framed print, black wood", price: 1400, stripe: 'https://buy.stripe.com/fZueVc6SEfQBgdr9vQ3Ru1s' },
     ],
   },
   'touchdown': {
@@ -114,9 +114,9 @@ const NEW_PRODUCTS = {
     badge: "Up to 16 \u00d7 20",
     maxNote: "Available up to 16\u00d720.",
     options: [
-      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: '#' },
-      { label: "16 \u00d7 20 in", detail: "Fine-art poster, unframed", price: 850, stripe: '#' },
-      { label: "16 \u00d7 20 in", detail: "Framed print, black wood", price: 1400, stripe: '#' },
+      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: 'https://buy.stripe.com/4gMcN4dh233P2mB8rM3Ru1t' },
+      { label: "16 \u00d7 20 in", detail: "Fine-art poster, unframed", price: 850, stripe: 'https://buy.stripe.com/dRm5kCfpa1ZLaT75fA3Ru1u' },
+      { label: "16 \u00d7 20 in", detail: "Framed print, black wood", price: 1400, stripe: 'https://buy.stripe.com/dRm6oG5OA5bX9P34bw3Ru1v' },
     ],
   },
   'shake-down': {
@@ -128,11 +128,11 @@ const NEW_PRODUCTS = {
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
-      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
+      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: 'https://buy.stripe.com/5kQdR87WI7k51ixazU3Ru1w' },
+      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: 'https://buy.stripe.com/fZuaEWel6eMx4uJcI23Ru1x' },
+      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: 'https://buy.stripe.com/7sYaEW5OAgUF0et5fA3Ru1y' },
+      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: 'https://buy.stripe.com/aFa7sKdh2gUF2mBeQa3Ru1z' },
+      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: 'https://buy.stripe.com/fZu7sKa4QeMx8KZazU3Ru1A' },
     ],
   },
   'iridescence': {
@@ -144,9 +144,9 @@ const NEW_PRODUCTS = {
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [
-      { label: "8 \u00d7 10 in", detail: "Fine-art poster, unframed", price: 500, stripe: '#' },
-      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: '#' },
-      { label: "11 \u00d7 14 in", detail: "Framed print, black wood", price: 1100, stripe: '#' },
+      { label: "8 \u00d7 10 in", detail: "Fine-art poster, unframed", price: 500, stripe: 'https://buy.stripe.com/fZueVc7WIgUF8KZfUe3Ru1B' },
+      { label: "11 \u00d7 14 in", detail: "Fine-art poster, unframed", price: 650, stripe: 'https://buy.stripe.com/14A4gyfpa7k51ixbDY3Ru1C' },
+      { label: "11 \u00d7 14 in", detail: "Framed print, black wood", price: 1100, stripe: 'https://buy.stripe.com/14A4gy5OA7k53qFdM63Ru1D' },
     ],
   },
   'last-cast': {
@@ -158,11 +158,11 @@ const NEW_PRODUCTS = {
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
-      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
+      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: 'https://buy.stripe.com/5kQ6oGel6bAld1fdM63Ru1E' },
+      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: 'https://buy.stripe.com/cNi8wO0ugeMx7GV0Zk3Ru1F' },
+      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: 'https://buy.stripe.com/00waEWel6cEp4uJ8rM3Ru1G' },
+      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: 'https://buy.stripe.com/14A9AS4KwbAl3qF0Zk3Ru1H' },
+      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: 'https://buy.stripe.com/14AaEW3Gs0VH8KZazU3Ru1I' },
     ],
   },
   'fire-plug': {
@@ -174,11 +174,11 @@ const NEW_PRODUCTS = {
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
-      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
+      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: 'https://buy.stripe.com/9B614m90M5bX2mB4bw3Ru1J' },
+      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: 'https://buy.stripe.com/00w8wO2Co7k56CReQa3Ru1K' },
+      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: 'https://buy.stripe.com/fZucN42Co33PbXb8rM3Ru1L' },
+      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: 'https://buy.stripe.com/5kQ3cu6SEawh6CR4bw3Ru1M' },
+      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: 'https://buy.stripe.com/8x23cudh2dIt2mBbDY3Ru1N' },
     ],
   },
   'the-getaway': {
@@ -190,11 +190,11 @@ const NEW_PRODUCTS = {
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
-      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
-      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
-      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
+      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: 'https://buy.stripe.com/6oU4gyccYdIt3qFbDY3Ru1O' },
+      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: 'https://buy.stripe.com/bJe7sKgte9sdbXbfUe3Ru1P' },
+      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: 'https://buy.stripe.com/cNi8wO1yk1ZL7GV6jE3Ru1Q' },
+      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: 'https://buy.stripe.com/cNi5kCgte5bX7GV6jE3Ru1R' },
+      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: 'https://buy.stripe.com/7sY00i1yk47T0etazU3Ru1S' },
     ],
   },
 };
