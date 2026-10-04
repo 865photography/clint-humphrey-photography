@@ -11,10 +11,6 @@ const COLLECTION_GROUPS = [
     collections: ['ducks', 'water-birds'],
   },
   {
-    name: 'Game Birds',
-    collections: ['game-birds'],
-  },
-  {
     name: 'Mammals',
     collections: ['mammals'],
   },
@@ -26,7 +22,7 @@ const COLLECTION_GROUPS = [
 
 /* Flat list of all collections in display order. */
 const COLLECTION_ORDER = [
-  'osprey', 'great-blue-heron', 'ducks', 'water-birds', 'game-birds', 'mammals', 'americana',
+  'osprey', 'great-blue-heron', 'ducks', 'water-birds', 'mammals', 'americana',
 ];
 
 /* Display names. */
@@ -35,7 +31,6 @@ const COLLECTIONS = {
   'great-blue-heron': 'Great Blue Heron',
   'ducks': 'Ducks',
   'water-birds': 'Water Birds',
-  'game-birds': 'Wild Turkey',
   'mammals': 'Mammals',
   'americana': 'Americana',
 };
@@ -57,10 +52,6 @@ const COLLECTION_META = {
     image: 'images/new/the-crane.jpg',
     blurb: 'Cranes and shorebirds.',
   },
-  'game-birds': {
-    image: 'images/new/wild-turkey.jpg',
-    blurb: 'Upland game birds in close portrait.',
-  },
   'mammals': {
     image: 'images/new/amber-eye.jpg',
     blurb: 'A tiger emerges from the dark.',
@@ -80,10 +71,6 @@ const GROUP_META = {
   'Water Birds': {
     image: 'images/new/touchdown.jpg',
     blurb: 'Ducks, cranes, and shorebirds.',
-  },
-  'Game Birds': {
-    image: 'images/new/wild-turkey.jpg',
-    blurb: 'Upland game birds.',
   },
   'Mammals': {
     image: 'images/new/amber-eye.jpg',
