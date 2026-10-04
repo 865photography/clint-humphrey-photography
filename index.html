@@ -38,9 +38,9 @@
   </div>
 </footer>
 
-<script src="js/site.js?v=3"></script>
-<script src="js/products-new.js?v=6"></script>
-<script src="js/collections.js?v=6"></script>
+<script src="js/site.js?v=7"></script>
+<script src="js/products-new.js?v=7"></script>
+<script src="js/collections.js?v=7"></script>
 <script>
   // Homepage: top-level group cards. Tap a group to see its sub-collections.
   const grid = document.getElementById('group-grid');
@@ -48,6 +48,7 @@
     const meta = GROUP_META[g.name];
     if (!meta) return;
     const n = countInGroup(g.name);
+    if (n === 0) return; // never render an empty collection
     // Single-collection groups link straight to the gallery
     const href = g.collections.length === 1
       ? `gallery.html?c=${g.collections[0]}`
