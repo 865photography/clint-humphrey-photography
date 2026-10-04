@@ -25,21 +25,6 @@ const PRODUCTS = {
       { label: '24 × 36 in',  detail: 'Gallery canvas',            price: 1800, stripe: 'https://buy.stripe.com/14A28q4Kw9sd1ix4bw3Ru04' },
     ],
   },
-  'twin-ospreys': {
-    title: 'Twin Ospreys',
-    tagline: 'Two ospreys riding evening light, wings locked in formation.',
-    story: 'Two ospreys flying in near-perfect formation over open water, every feather gilded by low sun. Offered in the largest sizes, printed from the high-resolution original.',
-    image: 'images/twin-ospreys.jpg',
-    badge: 'Large format ready',
-    maxNote: 'Available up to 24×36 — printed from the full-resolution original.',
-    options: [
-      { label: '12 × 18 in',  detail: 'Fine-art poster, unframed', price: 750,  stripe: 'https://buy.stripe.com/dRm4gy1ykbAl2mB5fA3Ru05' },
-      { label: '18 × 24 in',  detail: 'Fine-art poster, unframed', price: 950,  stripe: 'https://buy.stripe.com/9B6fZg4Kw33Pd1fazU3Ru06' },
-      { label: '24 × 36 in',  detail: 'Fine-art poster, unframed', price: 1200, stripe: 'https://buy.stripe.com/28EeVc3Gsawh1ixbDY3Ru07' },
-      { label: '18 × 24 in',  detail: 'Framed print, black wood',  price: 1600, stripe: 'https://buy.stripe.com/aFa5kCb8UcEp4uJgYi3Ru08' },
-      { label: '24 × 36 in',  detail: 'Gallery canvas',            price: 1800, stripe: 'https://buy.stripe.com/6oU28qgte1ZLd1fbDY3Ru09' },
-    ],
-  },
   'impact': {
     title: 'Impact',
     tagline: 'The strike, frozen at the instant of contact.',
