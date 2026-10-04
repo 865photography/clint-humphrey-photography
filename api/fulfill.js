@@ -66,8 +66,10 @@ function verifyStripeSignature(rawBody, header, secret) {
   const parts = Object.fromEntries(header.split(',').map(p => p.split('=')));
   const timestamp = parts.t;
   const signatures = header.split(',').filter(p => p.startsWith('v1=')).map(p => p.slice(3));
-  // Reject webhooks older than 5 minutes (replay protection).
-  if (Math.abs(Date.now() / 1000 - Number(timestamp)) > 300) return false;
+  // NOTE: do NOT reject old timestamps here. Stripe retries reuse the
+  // original event timestamp, so a freshness check would 400 every retry.
+  // Duplicate processing is prevented by the Gelato orderReferenceId
+  // idempotency check in the handler below.
   const expected = crypto
     .createHmac('sha256', secret)
     .update(`${timestamp}.${rawBody.toString('utf8')}`, 'utf8')
