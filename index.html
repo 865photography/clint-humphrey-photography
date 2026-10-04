@@ -3,62 +3,97 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clint Humphrey Photography — Fine-Art Prints</title>
-<meta name="description" content="Fine-art photographic prints by Clint Humphrey — birds of prey, water birds, mammals, and Americana. Printed to order, shipped worldwide.">
+<title>Clint Humphrey Photography — Fine-Art Wildlife Prints</title>
+<meta name="description" content="Fine-art wildlife photography prints by Clint Humphrey. Ospreys, water birds, mammals, and Americana — printed to order from the original high-resolution files.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clint Humphrey Photography">
-<meta property="og:title" content="Clint Humphrey Photography — Fine-Art Prints">
-<meta property="og:image" content="https://clint-humphrey-photography.vercel.app/images/new/amber-eye.jpg">
-<meta property="og:url" content="https://clint-humphrey-photography.vercel.app/">
-<link rel="stylesheet" href="css/style.css?v=2">
+<meta property="og:title" content="Clint Humphrey Photography — Fine-Art Wildlife Prints">
+<meta property="og:description" content="Fine-art wildlife photography prints, made to order from the original files.">
+<meta property="og:image" content="images/the-dive.jpg">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
+<a class="skip-link" href="#collections">Skip to collections</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="index.html">Clint Humphrey <span>Photography</span></a>
-    <nav class="main">
-      <a href="index.html" class="active">Home</a>
-      <a href="gallery.html">Prints</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">Clint Humphrey<small>Photography</small></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="gallery.html">Gallery</a>
+      <a href="explorer.html">Explorer</a>
       <a href="about.html">About</a>
     </nav>
   </div>
 </header>
 
-<div id="groups" style="padding-top:84px;max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px;">
-  <div class="coll-grid" id="group-grid"></div>
-</div>
-
-<footer class="site">
-  <div class="wrap wide">
-    <div class="base">
-      <span>© 2026 Clint Humphrey Photography. All images copyright the artist.</span>
-      <span>Printed to order · Shipped worldwide</span>
+<main>
+  <section class="hero" aria-label="Featured photograph">
+    <img src="images/the-dive.jpg" alt="An osprey diving toward the water, wings folded" fetchpriority="high">
+    <div class="hero-caption">
+      <h1>Clint Humphrey Photography</h1>
+      <p>Fine-art wildlife prints, made to order</p>
     </div>
+  </section>
+
+  <section class="section wrap" id="collections" aria-label="Collections">
+    <div class="section-head">
+      <h2>Collections</h2>
+      <a class="more" href="gallery.html">All prints</a>
+    </div>
+    <div class="group-grid">
+      <a class="group-card" href="gallery.html?g=birds-of-prey">
+        <img loading="lazy" src="images/the-dive.jpg" alt="Birds of Prey collection">
+        <div class="label"><h3>Birds of Prey</h3><span>20 prints</span></div>
+      </a>
+      <a class="group-card" href="gallery.html?g=water-birds">
+        <img loading="lazy" src="images/new/touchdown.jpg" alt="Water Birds collection">
+        <div class="label"><h3>Water Birds</h3><span>5 prints</span></div>
+      </a>
+      <a class="group-card" href="gallery.html?g=mammals">
+        <img loading="lazy" src="images/new/amber-eye.jpg" alt="Mammals collection">
+        <div class="label"><h3>Mammals</h3><span>1 print</span></div>
+      </a>
+      <a class="group-card" href="gallery.html?g=americana">
+        <img loading="lazy" src="images/new/the-getaway.jpg" alt="Americana collection">
+        <div class="label"><h3>Americana</h3><span>3 prints</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section wrap" aria-label="Featured prints">
+    <div class="section-head">
+      <h2>Featured</h2>
+      <a class="more" href="explorer.html?featured=1">More</a>
+    </div>
+    <div class="strip" id="featured-strip"></div>
+    <noscript><p style="color:var(--muted)">Enable JavaScript to browse featured prints, or <a href="gallery.html">view the full gallery</a>.</p></noscript>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 Clint Humphrey Photography. All images copyright the artist.</p>
+    <nav aria-label="Footer">
+      <a href="gallery.html">Gallery</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="about.html">About</a>
+    </nav>
   </div>
 </footer>
 
-<script src="js/site.js?v=8"></script>
-<script src="js/products-new.js?v=8"></script>
-<script src="js/collections.js?v=8"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
 <script>
-  // Homepage: top-level group cards. Tap a group to see its sub-collections.
-  const grid = document.getElementById('group-grid');
-  COLLECTION_GROUPS.forEach(g => {
-    const meta = GROUP_META[g.name];
-    if (!meta) return;
-    const n = countInGroup(g.name);
-    if (n === 0) return; // never render an empty collection
-    // Single-collection groups link straight to the gallery
-    const href = g.collections.length === 1
-      ? `gallery.html?c=${g.collections[0]}`
-      : `group.html?g=${groupSlug(g.name)}`;
-    grid.innerHTML += `
-      <a class="coll-card" href="${href}">
-        <img loading="lazy" src="${meta.image}" alt="${g.name}">
-        <div class="card-label">${g.name}</div>
-        <div class="card-sub">${n} prints</div>
-      </a>`;
+  document.addEventListener('DOMContentLoaded', function () {
+    var strip = document.getElementById('featured-strip');
+    var html = CHP.featured.map(function (id) {
+      var p = CHP.products[id];
+      if (!p) return '';
+      return '<a class="thumb" href="photo.html?id=' + encodeURIComponent(id) + '">' +
+        '<img loading="lazy" src="' + CHPApp.esc(p.image) + '" alt="' + CHPApp.esc(p.title) + '">' +
+        '<span><strong>' + CHPApp.esc(p.title) + '</strong>from ' + CHPApp.money(CHPApp.fromPrice(p)) + '</span></a>';
+    }).join('');
+    strip.innerHTML = html;
   });
 </script>
 </body>
