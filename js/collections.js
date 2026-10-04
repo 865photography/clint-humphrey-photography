@@ -8,7 +8,7 @@ const COLLECTION_GROUPS = [
   },
   {
     name: 'Water Birds',
-    collections: ['water-birds'],
+    collections: ['ducks', 'water-birds'],
   },
   {
     name: 'Mammals',
@@ -22,13 +22,14 @@ const COLLECTION_GROUPS = [
 
 /* Flat list of all collections in display order. */
 const COLLECTION_ORDER = [
-  'osprey', 'great-blue-heron', 'water-birds', 'mammals', 'americana',
+  'osprey', 'great-blue-heron', 'ducks', 'water-birds', 'mammals', 'americana',
 ];
 
 /* Display names. */
 const COLLECTIONS = {
   'osprey': 'Osprey',
   'great-blue-heron': 'Great Blue Heron',
+  'ducks': 'Ducks',
   'water-birds': 'Water Birds',
   'mammals': 'Mammals',
   'americana': 'Americana',
@@ -43,9 +44,13 @@ const COLLECTION_META = {
     image: 'images/blue-hunter.jpg',
     blurb: 'A great blue heron lifts off with its catch.',
   },
-  'water-birds': {
+  'ducks': {
     image: 'images/new/touchdown.jpg',
-    blurb: 'Ducks, cranes, and shorebirds on the water.',
+    blurb: 'Mallards on the water — landings, shake-offs, and close detail.',
+  },
+  'water-birds': {
+    image: 'images/new/the-crane.jpg',
+    blurb: 'Cranes and shorebirds.',
   },
   'mammals': {
     image: 'images/new/amber-eye.jpg',

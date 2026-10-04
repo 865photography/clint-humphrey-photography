@@ -110,7 +110,7 @@ const NEW_PRODUCTS = {
     tagline: "A mallard drops in, wings braking.",
     story: "Wings cupped and feet down, a mallard hen arrives on the water \u2014 the last second of flight.",
     image: "images/new/touchdown.jpg",
-    collection: "water-birds",
+    collection: "ducks",
     badge: "Up to 16 \u00d7 20",
     maxNote: "Available up to 16\u00d720.",
     options: [
@@ -124,7 +124,7 @@ const NEW_PRODUCTS = {
     tagline: "Water flies as a mallard shakes off.",
     story: "A burst of spray and ruffled feathers \u2014 a mallard shakes the lake off its back in a 22-megapixel freeze-frame.",
     image: "images/new/shake-down.jpg",
-    collection: "water-birds",
+    collection: "ducks",
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
@@ -140,7 +140,7 @@ const NEW_PRODUCTS = {
     tagline: "Backlit feathers, feather by feather.",
     story: "Low sun turns a duck's crown into beaten copper \u2014 an intimate study of feather and light.",
     image: "images/new/iridescence.jpg",
-    collection: "water-birds",
+    collection: "ducks",
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [
