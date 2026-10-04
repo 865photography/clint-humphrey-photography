@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Print — Clint Humphrey Photography</title>
-<meta name="description" content="A fine-art print by Clint Humphrey, printed to order on fine-art paper.">
+<meta name="description" content="A fine-art print by Clint Humphrey, printed to order.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clint Humphrey Photography">
 <meta id="og-title" property="og:title" content="Print — Clint Humphrey Photography">
@@ -25,40 +25,34 @@
   </div>
 </header>
 
-<div class="wrap">
-  <div class="product">
-    <div>
-      <a class="back" href="gallery.html">← All prints</a>
-      <div class="viewer" id="viewer">
-        <img id="pimg" src="" alt="">
-        <div class="hint">Click to view full-screen</div>
-      </div>
-    </div>
-    <div>
-      <h1 id="ptitle"></h1>
-      <div class="pcoll" id="pcoll"></div>
-      <div class="tagline" id="ptagline"></div>
-      <p class="story" id="pstory"></p>
+<div class="product">
+  <a class="back" href="gallery.html">← All prints</a>
+  <div class="viewer" id="viewer">
+    <img id="pimg" src="" alt="">
+  </div>
 
-      <div class="opt-label">Choose a size &amp; finish</div>
-      <div class="sizes" id="sizes"></div>
+  <h1 id="ptitle"></h1>
+  <div class="pcoll" id="pcoll"></div>
+  <div class="tagline" id="ptagline"></div>
+  <p class="story" id="pstory"></p>
 
-      <div class="buy-row">
-        <a class="btn wide" id="buybtn" href="#">Buy this print</a>
-        <div class="secure-note">Secure checkout via Stripe · You’ll confirm size and price before paying</div>
-      </div>
+  <div class="opt-label">Choose a size &amp; finish</div>
+  <div class="sizes" id="sizes"></div>
 
-      <div class="fineprint">
-        <h4>The details</h4>
-        <ul>
-          <li>Printed to order from the original high-resolution file — never warehoused.</li>
-          <li>Fine-art paper, produced by a professional print lab.</li>
-          <li id="maxnote"></li>
-          <li>Ships worldwide with tracking, packed to survive the journey.</li>
-          <li>Made to order — if your print arrives damaged or misprinted, contact us and we’ll make it right.</li>
-        </ul>
-      </div>
-    </div>
+  <div class="buy-row">
+    <a class="btn wide" id="buybtn" href="#">Buy this print</a>
+    <div class="secure-note">Secure checkout via Stripe · You’ll confirm size and price before paying</div>
+  </div>
+
+  <div class="fineprint">
+    <h4>The details</h4>
+    <ul>
+      <li>Printed to order from the original high-resolution file — never warehoused.</li>
+      <li>Fine-art paper, produced by a professional print lab.</li>
+      <li id="maxnote"></li>
+      <li>Ships worldwide with tracking, packed to survive the journey.</li>
+      <li>Made to order — if your print arrives damaged or misprinted, contact us and we’ll make it right.</li>
+    </ul>
   </div>
 </div>
 
@@ -74,7 +68,7 @@
 </div>
 
 <footer class="site">
-  <div class="wrap">
+  <div class="wrap wide">
     <div class="base">
       <span>© 2026 Clint Humphrey Photography. All images copyright the artist.</span>
       <span>Printed to order · Shipped worldwide</span>
@@ -90,7 +84,6 @@
   const p = ALL_PRODUCTS[id];
   if (!p) { location.href = 'gallery.html'; }
 
-  // SEO per product
   document.title = p.title + ' — Clint Humphrey Photography';
   document.querySelector('meta[name="description"]').content = p.tagline + ' Fine-art print, printed to order.';
   document.getElementById('og-title').content = p.title + ' — Clint Humphrey Photography';
@@ -114,7 +107,7 @@
     p.options.forEach((o, i) => {
       const b = document.createElement('button');
       b.className = 'size-btn' + (i === selected ? ' selected' : '');
-      b.innerHTML = `<span class="s">${o.label}</span><span class="n">${o.detail}</span><span class="p">$${o.price}</span>`;
+      b.innerHTML = `<span><span class="s">${o.label}</span><span class="n">${o.detail}</span></span><span class="p">$${o.price}</span>`;
       b.onclick = () => { selected = i; render(); };
       sizesEl.appendChild(b);
     });
@@ -129,15 +122,11 @@
       buyBtn.textContent = 'Available Soon';
       buyBtn.href = '#';
       buyBtn.className = 'btn wide soon';
-      buyBtn.onclick = (e) => {
-        e.preventDefault();
-        alert('Checkout is being connected for this print.');
-      };
+      buyBtn.onclick = (e) => { e.preventDefault(); };
     }
   }
   render();
 
-  /* ---------- lightbox: navigate within the product's collection ---------- */
   const peers = Object.entries(ALL_PRODUCTS)
     .filter(([pid, prod]) => prod.collection === p.collection)
     .map(([pid]) => pid);
@@ -156,20 +145,9 @@
     lbTitle.textContent = prod.title;
     lbCount.textContent = (lbIndex + 1) + ' / ' + peers.length;
   }
-  function lbOpen() {
-    lbIndex = peers.indexOf(id);
-    lbShow();
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function lbClose() {
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function lbStep(d) {
-    lbIndex = (lbIndex + d + peers.length) % peers.length;
-    lbShow();
-  }
+  function lbOpen() { lbIndex = peers.indexOf(id); lbShow(); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function lbClose() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+  function lbStep(d) { lbIndex = (lbIndex + d + peers.length) % peers.length; lbShow(); }
 
   document.getElementById('viewer').onclick = lbOpen;
   document.getElementById('lb-close').onclick = lbClose;
@@ -182,8 +160,6 @@
     if (e.key === 'ArrowLeft') lbStep(-1);
     if (e.key === 'ArrowRight') lbStep(1);
   });
-
-  // touch swipe
   let touchX = null;
   lb.addEventListener('touchstart', (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
   lb.addEventListener('touchend', (e) => {

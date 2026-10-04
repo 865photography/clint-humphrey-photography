@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Prints — Clint Humphrey Photography</title>
-<meta name="description" content="Browse all 30 fine-art prints by Clint Humphrey across five collections — wildlife, birds on the wing, Americana, golden hour, and wild portraits.">
+<meta name="description" content="Browse all fine-art prints by Clint Humphrey — wildlife, birds on the wing, Americana, golden hour, and wild portraits.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clint Humphrey Photography">
 <meta property="og:title" content="All Prints — Clint Humphrey Photography">
-<meta property="og:description" content="68 fine-art prints across nine collections. Printed to order, shipped worldwide.">
 <meta property="og:image" content="https://clint-humphrey-photography.vercel.app/images/new/amber-eye.jpg">
 <meta property="og:url" content="https://clint-humphrey-photography.vercel.app/gallery.html">
 <link rel="stylesheet" href="css/style.css">
@@ -26,33 +25,27 @@
   </div>
 </header>
 
-<section class="block" style="margin-top:68px">
-  <div class="wrap">
-    <h2 class="section-title">The gallery</h2>
-    <p class="section-sub">Every photograph is offered only in the sizes its resolution honestly supports — so what arrives on your wall is always sharp.</p>
-    <div class="filters" id="filters"></div>
-    <div class="grid" id="all"></div>
-  </div>
-</section>
+<div style="padding-top:64px">
+  <h2 class="section-title">The Gallery</h2>
+  <p class="section-sub">Every photograph is offered only in the sizes its resolution honestly supports — so what arrives on your wall is always sharp.</p>
+  <div class="filters" id="filters"></div>
+  <div class="cards" id="all"></div>
+</div>
 
 <footer class="site">
-  <div class="wrap">
+  <div class="wrap wide">
     <div class="cols">
       <div>
-        <div class="brandline">Clint Humphrey <span style="font-style:italic;color:var(--muted)">Photography</span></div>
+        <div class="brandline">Clint Humphrey Photography</div>
         <p>Fine-art prints from original frames. Printed to order and shipped worldwide.</p>
       </div>
       <div>
         <h5>Shop</h5>
-        <ul>
-          <li><a href="gallery.html">All prints</a></li>
-        </ul>
+        <ul><li><a href="gallery.html">All prints</a></li></ul>
       </div>
       <div>
         <h5>Studio</h5>
-        <ul>
-          <li><a href="about.html">About</a></li>
-        </ul>
+        <ul><li><a href="about.html">About</a></li></ul>
       </div>
     </div>
     <div class="base">
@@ -72,20 +65,6 @@
   let active = params.get('c') || 'all';
   if (active !== 'all' && !COLLECTION_ORDER.includes(active)) active = 'all';
 
-  function card(id, p) {
-    return `
-      <div class="card">
-        <a href="product.html?id=${id}">
-          <div class="ph"><img loading="lazy" src="${p.image}" alt="${p.title}"></div>
-          <div class="body">
-            <h3>${p.title}</h3>
-            <div class="coll">${collectionName(p.collection)}</div>
-            <div class="price">from $${fromPrice(p)} <small>· ${p.options.length} sizes</small></div>
-          </div>
-        </a>
-      </div>`;
-  }
-
   function render() {
     filtersEl.innerHTML = '';
     const mk = (slug, label) => {
@@ -101,7 +80,12 @@
     grid.innerHTML = '';
     Object.entries(ALL_PRODUCTS).forEach(([id, p]) => {
       if (active !== 'all' && p.collection !== active) return;
-      grid.innerHTML += card(id, p);
+      grid.innerHTML += `
+        <a class="card" href="product.html?id=${id}">
+          <img loading="lazy" src="${p.image}" alt="${p.title}">
+          <div class="card-label">${p.title}</div>
+          <div class="card-meta">from $${fromPrice(p)} · ${p.options.length} sizes</div>
+        </a>`;
     });
   }
   render();
