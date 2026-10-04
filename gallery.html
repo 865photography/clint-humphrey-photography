@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Prints — Clint Humphrey Photography</title>
-<meta name="description" content="Browse all fine-art prints by Clint Humphrey — wildlife, birds on the wing, Americana, golden hour, and wild portraits.">
+<meta name="description" content="Browse all fine-art prints by Clint Humphrey — birds, mammals, and Americana.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clint Humphrey Photography">
 <meta property="og:title" content="All Prints — Clint Humphrey Photography">
@@ -75,18 +75,41 @@
       filtersEl.appendChild(b);
     };
     mk('all', 'All');
-    COLLECTION_ORDER.forEach(slug => mk(slug, collectionName(slug)));
+    // Grouped: Birds sub-collections together, then Mammals, Americana
+    COLLECTION_GROUPS.forEach(g => {
+      g.collections.forEach(slug => {
+        const n = countInCollection(slug);
+        if (n > 0) mk(slug, collectionName(slug));
+      });
+    });
 
     grid.innerHTML = '';
-    Object.entries(ALL_PRODUCTS).forEach(([id, p]) => {
-      if (active !== 'all' && p.collection !== active) return;
-      grid.innerHTML += `
-        <a class="card" href="product.html?id=${id}">
-          <img loading="lazy" src="${p.image}" alt="${p.title}">
-          <div class="card-label">${p.title}</div>
-          <div class="card-meta">from $${fromPrice(p)} · ${p.options.length} sizes</div>
-        </a>`;
-    });
+    // Group products by collection group for display
+    if (active === 'all') {
+      COLLECTION_GROUPS.forEach(g => {
+        const items = Object.entries(ALL_PRODUCTS).filter(([id, p]) => g.collections.includes(p.collection));
+        if (items.length === 0) return;
+        grid.innerHTML += `<h3 style="text-align:center;font-size:28px;font-weight:400;margin:48px 0 24px;">${g.name}</h3>`;
+        items.forEach(([id, p]) => {
+          grid.innerHTML += `
+            <a class="card" href="product.html?id=${id}">
+              <img loading="lazy" src="${p.image}" alt="${p.title}">
+              <div class="card-label">${p.title}</div>
+              <div class="card-meta">from $${fromPrice(p)} · ${p.options.length} sizes</div>
+            </a>`;
+        });
+      });
+    } else {
+      Object.entries(ALL_PRODUCTS).forEach(([id, p]) => {
+        if (p.collection !== active) return;
+        grid.innerHTML += `
+          <a class="card" href="product.html?id=${id}">
+            <img loading="lazy" src="${p.image}" alt="${p.title}">
+            <div class="card-label">${p.title}</div>
+            <div class="card-meta">from $${fromPrice(p)} · ${p.options.length} sizes</div>
+          </a>`;
+      });
+    }
   }
   render();
 </script>

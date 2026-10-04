@@ -1,53 +1,72 @@
-/* Collection metadata — Clint Humphrey Photography.
- * COLLECTIONS (slug -> display name) is defined in js/products-new.js.
- * This file adds cover images and blurbs for the 5 collections. */
+/* Collection taxonomy — Clint Humphrey Photography.
+ * Top-level groups with sub-collections for Birds. */
 
-const COLLECTION_META = {
-  "wildlife": {
-    image: "images/sunset-silhouette.jpg",
-    blurb: "Birds of prey at the decisive moment — the dive, the strike, the catch."
+const COLLECTION_GROUPS = [
+  {
+    name: 'Birds',
+    collections: ['birds-on-the-wing', 'birds-portraits'],
   },
-  "americana": {
-    image: "images/new/the-getaway.jpg",
-    blurb: "Roadside America — chrome, neon, and weathered paint."
+  {
+    name: 'Mammals',
+    collections: ['mammals'],
   },
-  "golden-hour": {
-    image: "images/new/last-cast.jpg",
-    blurb: "The last light of the day, held on water and glass."
+  {
+    name: 'Americana',
+    collections: ['americana'],
   },
-  "on-the-wing": {
-    image: "images/new/wings-up.jpg",
-    blurb: "Birds in flight — ospreys, cranes, and cardinals on the move."
-  },
-  "wild-portraits": {
-    image: "images/new/amber-eye.jpg",
-    blurb: "Close encounters — a single amber eye in the dark."
-  }
-};
-
-/* The 5 collections in display order. */
-const COLLECTION_ORDER = [
-  "wildlife", "rides",
-  "americana", "golden-hour", "on-the-wing", "wild-portraits"
 ];
 
-/* Merged catalog: existing 16 (collection 'wildlife') + 14 new. */
+/* Flat list of all collections in display order. */
+const COLLECTION_ORDER = [
+  'birds-on-the-wing', 'birds-portraits', 'mammals', 'americana',
+];
+
+/* Display names. */
+const COLLECTIONS = {
+  'birds-on-the-wing': 'On the Wing',
+  'birds-portraits': 'Wild Portraits',
+  'mammals': 'Mammals',
+  'americana': 'Americana',
+};
+
+const COLLECTION_META = {
+  'birds-on-the-wing': {
+    image: 'images/new/wings-up.jpg',
+    blurb: 'Birds in flight — ospreys at the dive, the strike, the catch.',
+  },
+  'birds-portraits': {
+    image: 'images/new/the-crane.jpg',
+    blurb: 'Close encounters — cranes, killdeer, and iridescent detail.',
+  },
+  'mammals': {
+    image: 'images/new/amber-eye.jpg',
+    blurb: 'A tiger emerges from the dark.',
+  },
+  'americana': {
+    image: 'images/new/the-getaway.jpg',
+    blurb: 'Roadside America — chrome, paint, and working water.',
+  },
+};
+
+/* Merged catalog: 16 originals + 13 new. Each product carries its own collection. */
 const ALL_PRODUCTS = (() => {
   const out = {};
-  for (const [id, p] of Object.entries(PRODUCTS)) {
-    out[id] = Object.assign({}, p, { collection: "wildlife" });
-  }
-  for (const [id, p] of Object.entries(NEW_PRODUCTS)) {
-    out[id] = p;
-  }
+  for (const [id, p] of Object.entries(PRODUCTS)) out[id] = p;
+  for (const [id, p] of Object.entries(NEW_PRODUCTS)) out[id] = p;
   return out;
 })();
 
 function collectionName(slug) {
-  if (slug === "wildlife") return "Wildlife";
-  return (typeof COLLECTIONS !== "undefined" && COLLECTIONS[slug]) || slug;
+  return COLLECTIONS[slug] || slug;
 }
 
 function countInCollection(slug) {
   return Object.values(ALL_PRODUCTS).filter(p => p.collection === slug).length;
+}
+
+function groupForCollection(slug) {
+  for (const g of COLLECTION_GROUPS) {
+    if (g.collections.includes(slug)) return g.name;
+  }
+  return null;
 }
