@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clint Humphrey Photography — Fine-Art Prints</title>
-<meta name="description" content="Fine-art photographic prints by Clint Humphrey — birds, mammals, and Americana. Printed to order, shipped worldwide.">
+<meta name="description" content="Fine-art photographic prints by Clint Humphrey — birds of prey, water birds, mammals, and Americana. Printed to order, shipped worldwide.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clint Humphrey Photography">
 <meta property="og:title" content="Clint Humphrey Photography — Fine-Art Prints">
@@ -25,7 +25,9 @@
   </div>
 </header>
 
-<div id="groups" style="padding-top:84px"></div>
+<div id="groups" style="padding-top:84px;max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px;">
+  <div class="coll-grid" id="group-grid"></div>
+</div>
 
 <footer class="site">
   <div class="wrap wide">
@@ -38,23 +40,24 @@
 
 <script src="js/site.js?v=3"></script>
 <script src="js/products-new.js?v=4"></script>
-<script src="js/collections.js?v=3"></script>
+<script src="js/collections.js?v=4"></script>
 <script>
-  const groupsEl = document.getElementById('groups');
+  // Homepage: top-level group cards. Tap a group to see its sub-collections.
+  const grid = document.getElementById('group-grid');
   COLLECTION_GROUPS.forEach(g => {
-    let html = `<h2 class="section-title">${g.name}</h2><div class="coll-grid">`;
-    g.collections.forEach(slug => {
-      const meta = COLLECTION_META[slug];
-      const n = countInCollection(slug);
-      if (!meta || n === 0) return;
-      html += `
-        <a class="coll-card" href="gallery.html?c=${slug}">
-          <img loading="lazy" src="${meta.image}" alt="${collectionName(slug)}">
-          <div class="card-label">${collectionName(slug)}</div>
-        </a>`;
-    });
-    html += `</div>`;
-    groupsEl.innerHTML += html;
+    const meta = GROUP_META[g.name];
+    if (!meta) return;
+    const n = countInGroup(g.name);
+    // Single-collection groups link straight to the gallery
+    const href = g.collections.length === 1
+      ? `gallery.html?c=${g.collections[0]}`
+      : `group.html?g=${groupSlug(g.name)}`;
+    grid.innerHTML += `
+      <a class="coll-card" href="${href}">
+        <img loading="lazy" src="${meta.image}" alt="${g.name}">
+        <div class="card-label">${g.name}</div>
+        <div class="card-sub">${n} prints</div>
+      </a>`;
   });
 </script>
 </body>

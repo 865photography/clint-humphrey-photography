@@ -57,6 +57,36 @@ const COLLECTION_META = {
   },
 };
 
+
+const GROUP_META = {
+  'Birds of Prey': {
+    image: 'images/the-dive.jpg',
+    blurb: 'Ospreys and herons — hunters on the wing.',
+  },
+  'Water Birds': {
+    image: 'images/new/touchdown.jpg',
+    blurb: 'Ducks, cranes, and shorebirds.',
+  },
+  'Mammals': {
+    image: 'images/new/amber-eye.jpg',
+    blurb: 'A tiger emerges from the dark.',
+  },
+  'Americana': {
+    image: 'images/new/the-getaway.jpg',
+    blurb: 'Roadside America.',
+  },
+};
+
+function groupSlug(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+}
+
+function countInGroup(name) {
+  const g = COLLECTION_GROUPS.find(x => x.name === name);
+  if (!g) return 0;
+  return g.collections.reduce((sum, slug) => sum + countInCollection(slug), 0);
+}
+
 /* Merged catalog: 16 originals + 13 new. Each product carries its own collection. */
 const ALL_PRODUCTS = (() => {
   const out = {};

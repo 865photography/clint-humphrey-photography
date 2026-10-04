@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collection — Clint Humphrey Photography</title>
+<meta name="description" content="Browse a collection of fine-art prints by Clint Humphrey.">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Clint Humphrey <span>Photography</span></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Prints</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div style="padding-top:84px;max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px;">
+  <h2 class="section-title" id="group-title"></h2>
+  <p class="section-sub" id="group-blurb"></p>
+  <div class="coll-grid" id="sub-grid"></div>
+</div>
+
+<footer class="site">
+  <div class="wrap wide">
+    <div class="base">
+      <span>© 2026 Clint Humphrey Photography. All images copyright the artist.</span>
+      <span>Printed to order · Shipped worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js?v=3"></script>
+<script src="js/products-new.js?v=4"></script>
+<script src="js/collections.js?v=4"></script>
+<script>
+  const params = new URLSearchParams(location.search);
+  const gslug = params.get('g');
+  const group = COLLECTION_GROUPS.find(g => groupSlug(g.name) === gslug);
+
+  if (!group) {
+    document.getElementById('group-title').textContent = 'Collection not found';
+  } else {
+    document.title = `${group.name} — Clint Humphrey Photography`;
+    document.getElementById('group-title').textContent = group.name;
+    const meta = GROUP_META[group.name];
+    if (meta && meta.blurb) document.getElementById('group-blurb').textContent = meta.blurb;
+
+    const grid = document.getElementById('sub-grid');
+    group.collections.forEach(slug => {
+      const cmeta = COLLECTION_META[slug];
+      const n = countInCollection(slug);
+      if (!cmeta || n === 0) return;
+      grid.innerHTML += `
+        <a class="coll-card" href="gallery.html?c=${slug}">
+          <img loading="lazy" src="${cmeta.image}" alt="${collectionName(slug)}">
+          <div class="card-label">${collectionName(slug)}</div>
+          <div class="card-sub">${n} prints</div>
+        </a>`;
+    });
+  }
+</script>
+</body>
+</html>
