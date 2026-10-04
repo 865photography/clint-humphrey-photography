@@ -199,9 +199,3 @@ const NEW_PRODUCTS = {
   },
 };
 
-const COLLECTIONS = {
-  "americana": "Americana",
-  "golden-hour": "Golden Hour",
-  "on-the-wing": "On the Wing",
-  "wild-portraits": "Wild Portraits",
-};
