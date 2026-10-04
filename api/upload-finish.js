@@ -66,7 +66,8 @@ module.exports = async (req, res) => {
       bytes: buf.length, expected: totalSize || null
     }));
     if (Number.isInteger(totalSize) && totalSize > 0 && buf.length !== totalSize) {
-      bad(res, 502, 'size mismatch: assembled ' + buf.length + ' bytes, expected ' + totalSize);
+      bad(res, 502, 'size mismatch: assembled ' + buf.length + ' of ' + totalSize +
+        ' parts=' + blobShas.length + ' lens=[' + parts.map(p => p.length).join(',') + ']');
       return;
     }
 
