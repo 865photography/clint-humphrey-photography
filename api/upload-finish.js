@@ -48,26 +48,23 @@ module.exports = async (req, res) => {
   const destPath = 'incoming/' + stamp + '_' + safe;
 
   try {
-    // 1. Fetch every part blob and concatenate.
-    const parts = [];
+    // 1. Fetch every part blob, decode each chunk's base64 separately, and
+    // concatenate the raw bytes. (Chunks must be decoded individually:
+    // a chunk's base64 carries its own '=' padding, and joining padded
+    // base64 strings would make the decoder stop at the first '='.)
+    const buffers = [];
     for (const sha of blobShas) {
       if (typeof sha !== 'string' || !/^[0-9a-f]{40}$/.test(sha)) { bad(res, 400, 'bad part sha'); return; }
       const r = await gh('/git/blobs/' + sha, token);
       if (!r.ok) { bad(res, 502, 'blob fetch failed'); return; }
       const j = await r.json();
-      // GitHub may return content with newlines; strip them before concat.
-      parts.push(String(j.content || '').replace(/\n/g, ''));
+      // GitHub may return content with newlines; strip them before decode.
+      const b64 = String(j.content || '').replace(/\n/g, '');
+      buffers.push(Buffer.from(b64, 'base64'));
     }
-    const fullB64 = parts.join('');
-    const buf = Buffer.from(fullB64, 'base64');
-    console.log(JSON.stringify({
-      upload: destPath, parts: blobShas.length,
-      partLens: parts.map(p => p.length),
-      bytes: buf.length, expected: totalSize || null
-    }));
+    const buf = Buffer.concat(buffers);
     if (Number.isInteger(totalSize) && totalSize > 0 && buf.length !== totalSize) {
-      bad(res, 502, 'size mismatch: assembled ' + buf.length + ' of ' + totalSize +
-        ' parts=' + blobShas.length + ' lens=[' + parts.map(p => p.length).join(',') + ']');
+      bad(res, 502, 'size mismatch: assembled ' + buf.length + ' of ' + totalSize);
       return;
     }
 
