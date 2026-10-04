@@ -24,7 +24,7 @@ const NEW_PRODUCTS = {
     tagline: "An osprey rides the morning thermal.",
     story: "Wings locked in a shallow V, an osprey hangs motionless on rising air \u2014 the cheapest seat in the house, and the best view.",
     image: "images/new/soaring.jpg",
-    collection: "birds-on-the-wing",
+    collection: "osprey",
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [
@@ -38,7 +38,7 @@ const NEW_PRODUCTS = {
     tagline: "An osprey crosses dark water.",
     story: "Low over black water, wings rowing steady \u2014 the daily commute of a working raptor.",
     image: "images/new/the-commute.jpg",
-    collection: "birds-on-the-wing",
+    collection: "osprey",
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [
@@ -52,7 +52,7 @@ const NEW_PRODUCTS = {
     tagline: "The strike position, fully committed.",
     story: "Wings thrown skyward, talons reaching \u2014 the osprey's dive begins here, in this exact geometry.",
     image: "images/new/wings-up.jpg",
-    collection: "birds-on-the-wing",
+    collection: "osprey",
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [
@@ -66,7 +66,7 @@ const NEW_PRODUCTS = {
     tagline: "Breakfast, incoming.",
     story: "An osprey ferries a silver fish across a blue sky \u2014 the morning's work, nearly home.",
     image: "images/new/delivery.jpg",
-    collection: "birds-on-the-wing",
+    collection: "osprey",
     badge: "Up to 16 \u00d7 20",
     maxNote: "Available up to 16\u00d720.",
     options: [
@@ -80,7 +80,7 @@ const NEW_PRODUCTS = {
     tagline: "A red-crowned crane in close portrait.",
     story: "Crimson crown, amber eye, dagger bill \u2014 this crane portrait is all aristocratic menace, rendered feather by feather.",
     image: "images/new/the-crane.jpg",
-    collection: "birds-portraits",
+    collection: "water-birds",
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
@@ -96,7 +96,7 @@ const NEW_PRODUCTS = {
     tagline: "A small plover on rocky ground.",
     story: "All big eyes and broken-wing theatrics \u2014 the killdeer holds its ground on a bed of gravel.",
     image: "images/new/killdeer.jpg",
-    collection: "birds-portraits",
+    collection: "water-birds",
     badge: "Up to 16 \u00d7 20",
     maxNote: "Available up to 16\u00d720.",
     options: [
@@ -110,7 +110,7 @@ const NEW_PRODUCTS = {
     tagline: "A mallard drops in, wings braking.",
     story: "Wings cupped and feet down, a mallard hen arrives on the water \u2014 the last second of flight.",
     image: "images/new/touchdown.jpg",
-    collection: "birds-on-the-wing",
+    collection: "water-birds",
     badge: "Up to 16 \u00d7 20",
     maxNote: "Available up to 16\u00d720.",
     options: [
@@ -124,7 +124,7 @@ const NEW_PRODUCTS = {
     tagline: "Water flies as a mallard shakes off.",
     story: "A burst of spray and ruffled feathers \u2014 a mallard shakes the lake off its back in a 22-megapixel freeze-frame.",
     image: "images/new/shake-down.jpg",
-    collection: "birds-on-the-wing",
+    collection: "water-birds",
     badge: "Large format ready",
     maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
     options: [
@@ -140,7 +140,7 @@ const NEW_PRODUCTS = {
     tagline: "Backlit feathers, feather by feather.",
     story: "Low sun turns a duck's crown into beaten copper \u2014 an intimate study of feather and light.",
     image: "images/new/iridescence.jpg",
-    collection: "birds-portraits",
+    collection: "water-birds",
     badge: "Small format",
     maxNote: "Offered up to 11\u00d714 to keep every feather crisp.",
     options: [

@@ -15,7 +15,7 @@ const PRODUCTS = {
     tagline: 'An osprey crosses a burning sky — the day\'s last hunter.',
     story: 'Shot against a blazing evening sky, this frame reduces the osprey to pure geometry: wings, intent, and light. Printed from the 32-megapixel original, it holds together at the largest sizes on the wall.',
     image: 'images/sunset-silhouette.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Large format ready',
     maxNote: 'Available up to 24×36 — printed from the full-resolution original.',
     options: [
@@ -31,7 +31,7 @@ const PRODUCTS = {
     tagline: 'The strike, frozen at the instant of contact.',
     story: 'Wings thrown skyward, water exploding outward — the exact instant the talons find the surface. The climax of the hunt, caught at 1/3200th of a second and offered up to 16×20.',
     image: 'images/impact.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Up to 16 × 20',
     maxNote: 'Available up to 16×20.',
     options: [
@@ -45,7 +45,7 @@ const PRODUCTS = {
     tagline: 'Feet first at 1/3200th of a second — the hunter, frozen.',
     story: 'Ospreys hunt feet-first, and this frame freezes the moment the talons spread for the strike. Warm sidelight carves every feather. Offered up to 16×20 where it stays beautifully sharp.',
     image: 'images/talons-out.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Up to 16 × 20',
     maxNote: 'Available up to 16×20.',
     options: [
@@ -59,7 +59,7 @@ const PRODUCTS = {
     tagline: 'Two ospreys bank in close formation — precision flying.',
     story: 'Aerial coordination most pilots would envy: two ospreys carve the same turn, wingtips nearly touching. Sharp feather detail throughout, offered up to 16×20.',
     image: 'images/tandem.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Up to 16 × 20',
     maxNote: 'Available up to 16×20.',
     options: [
@@ -73,7 +73,7 @@ const PRODUCTS = {
     tagline: 'The moment after the strike — dinner, secured.',
     story: 'Climbing out of the water with its catch locked in both talons, droplets still falling. The reward for the hunt, offered up to 16×20.',
     image: 'images/the-catch.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Up to 16 × 20',
     maxNote: 'Available up to 16×20.',
     options: [
@@ -87,7 +87,7 @@ const PRODUCTS = {
     tagline: 'Low sun gilds every feather of a banking osprey.',
     story: 'Evening light does the composition here — warm gold on the upper wing, cool shadow below, the bird banking into the last light of the day. A tight crop, offered in smaller sizes where it stays razor sharp.',
     image: 'images/golden-hour.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Small format',
     maxNote: 'Offered up to 11×14 to keep every feather crisp.',
     options: [
@@ -101,7 +101,7 @@ const PRODUCTS = {
     tagline: 'An osprey folds its wings and commits — talons first.',
     story: 'The instant before impact: an osprey collapses its six-foot wingspan into a dart and drops toward the water at full commitment. This tight crop is offered in smaller sizes, where its drama stays razor sharp.',
     image: 'images/the-dive.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Small format',
     maxNote: 'Offered up to 11×14 to keep every feather crisp.',
     options: [
@@ -115,7 +115,7 @@ const PRODUCTS = {
     tagline: 'Two ospreys collide midair over a dropped fish.',
     story: 'A midair dispute over breakfast — one osprey rakes at the other’s catch as the fish tumbles free between them. The raw politics of the fishing grounds, frozen in a single frame.',
     image: 'images/the-tussle.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Up to 16 × 20',
     maxNote: 'Available up to 16×20.',
     options: [
@@ -129,7 +129,7 @@ const PRODUCTS = {
     tagline: 'A great blue heron lifts off with its catch.',
     story: 'Not an osprey — a great blue heron, all six feet of wingspan, hauling itself off dark water with a fish in its bill. A different hunter, the same ruthless competence.',
     image: 'images/blue-hunter.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'great-blue-heron',
     badge: 'Large format ready',
     maxNote: 'Available up to 24×36 — printed from the full-resolution original.',
     options: [
@@ -145,7 +145,7 @@ const PRODUCTS = {
     tagline: 'An osprey ferries a striped bass home.',
     story: 'Breakfast secured: an osprey carries a striped bass across open water, wings locked, eyes forward. The whole economy of the shoreline in one frame.',
     image: 'images/the-prize.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Large format ready',
     maxNote: 'Available up to 24×36 — printed from the full-resolution original.',
     options: [
@@ -161,7 +161,7 @@ const PRODUCTS = {
     tagline: 'An osprey crosses a darkening sky, fish in talons.',
     story: 'Shot against a brooding sky, this frame turns a working fishing trip into something mythic — the hunter as silhouette, the catch gleaming below.',
     image: 'images/the-crossing.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Large format ready',
     maxNote: 'Available up to 24×36 — printed from the full-resolution original.',
     options: [
@@ -177,7 +177,7 @@ const PRODUCTS = {
     tagline: 'Committed to the dive — no hesitation, no brakes.',
     story: 'Half a heartbeat before impact: an osprey folds into the strike, talons spread, eyes locked on the water below. The most committed hundred feet in nature.',
     image: 'images/talons-first.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Large format ready',
     maxNote: 'Available up to 24×36 — printed from the full-resolution original.',
     options: [
@@ -193,7 +193,7 @@ const PRODUCTS = {
     tagline: 'Water still falling, the hunt already won.',
     story: 'The moment after the catch — an osprey hauls itself off sparkling water, fish locked in both talons, droplets scattering. Victory, dripping.',
     image: 'images/liftoff.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Large format ready',
     maxNote: 'Available up to 24×36 — printed from the full-resolution original.',
     options: [
@@ -209,7 +209,7 @@ const PRODUCTS = {
     tagline: 'A hard shake, a burst of spray, and back to business.',
     story: 'Fresh out of the water with dinner secured, this osprey shakes off the dive in a burst of spray against black water. Pure attitude.',
     image: 'images/water-off.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Up to 16 × 20',
     maxNote: 'Available up to 16×20.',
     options: [
@@ -223,7 +223,7 @@ const PRODUCTS = {
     tagline: 'A full-commitment turn at fishing speed.',
     story: 'Wings twisted nearly vertical, an osprey carves a hard bank over the water, fish already secured. Aerial work most pilots would envy.',
     image: 'images/hard-bank.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Up to 16 × 20',
     maxNote: 'Available up to 16×20.',
     options: [
@@ -237,7 +237,7 @@ const PRODUCTS = {
     tagline: 'Climbing out with the morning’s catch.',
     story: 'Wings beating skyward, an osprey climbs away from the water with its fish. A portrait-orientation frame that suits a narrow wall.',
     image: 'images/rising.jpg',
-    collection: 'birds-on-the-wing',
+    collection: 'osprey',
     badge: 'Small format',
     maxNote: 'Offered up to 11×14 to keep every feather crisp.',
     options: [

@@ -1,10 +1,14 @@
 /* Collection taxonomy — Clint Humphrey Photography.
- * Top-level groups with sub-collections for Birds. */
+ * Top-level groups with sub-collections. */
 
 const COLLECTION_GROUPS = [
   {
-    name: 'Birds',
-    collections: ['birds-on-the-wing', 'birds-portraits'],
+    name: 'Birds of Prey',
+    collections: ['osprey', 'great-blue-heron'],
+  },
+  {
+    name: 'Water Birds',
+    collections: ['water-birds'],
   },
   {
     name: 'Mammals',
@@ -18,25 +22,30 @@ const COLLECTION_GROUPS = [
 
 /* Flat list of all collections in display order. */
 const COLLECTION_ORDER = [
-  'birds-on-the-wing', 'birds-portraits', 'mammals', 'americana',
+  'osprey', 'great-blue-heron', 'water-birds', 'mammals', 'americana',
 ];
 
 /* Display names. */
 const COLLECTIONS = {
-  'birds-on-the-wing': 'On the Wing',
-  'birds-portraits': 'Wild Portraits',
+  'osprey': 'Osprey',
+  'great-blue-heron': 'Great Blue Heron',
+  'water-birds': 'Water Birds',
   'mammals': 'Mammals',
   'americana': 'Americana',
 };
 
 const COLLECTION_META = {
-  'birds-on-the-wing': {
-    image: 'images/new/wings-up.jpg',
-    blurb: 'Birds in flight — ospreys at the dive, the strike, the catch.',
+  'osprey': {
+    image: 'images/the-dive.jpg',
+    blurb: 'The fish hawk — dives, strikes, and catches.',
   },
-  'birds-portraits': {
-    image: 'images/new/the-crane.jpg',
-    blurb: 'Close encounters — cranes, killdeer, and iridescent detail.',
+  'great-blue-heron': {
+    image: 'images/blue-hunter.jpg',
+    blurb: 'A great blue heron lifts off with its catch.',
+  },
+  'water-birds': {
+    image: 'images/new/touchdown.jpg',
+    blurb: 'Ducks, cranes, and shorebirds on the water.',
   },
   'mammals': {
     image: 'images/new/amber-eye.jpg',
