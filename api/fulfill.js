@@ -145,7 +145,11 @@ module.exports = async (req, res) => {
     const normalized = sizeLabel.replace(/\s*×\s*/g, 'x').replace(/\s*in\s*/g, '').replace(/\s+/g, '');
     const productUid = productUidFor(finish, normalized, print.orientation);
 
-    const ship = session.shipping_details || {};
+    // Shipping address: current Stripe API versions put it under
+    // collected_information.shipping_details; older ones use the top-level
+    // shipping_details. Support both.
+    const ci = session.collected_information || {};
+    const ship = ci.shipping_details || session.shipping_details || {};
     const addr = ship.address || {};
     const customer = session.customer_details || {};
     const fullName = (ship.name || customer.name || '').trim();
