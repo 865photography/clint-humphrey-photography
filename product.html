@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Print — Clint Humphrey Photography</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Clint Humphrey <span>Photography</span></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="gallery.html">Prints</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="product">
+    <div>
+      <a class="back" href="gallery.html">← All prints</a>
+      <div class="viewer"><img id="pimg" src="" alt=""></div>
+    </div>
+    <div>
+      <h1 id="ptitle"></h1>
+      <div class="sub" id="pbadge"></div>
+      <p class="story" id="pstory"></p>
+
+      <div class="opt-label">Choose a size &amp; finish</div>
+      <div class="sizes" id="sizes"></div>
+
+      <div class="buy-row">
+        <a class="btn wide" id="buybtn" href="#">Buy this print</a>
+        <div class="secure-note">Secure checkout via Stripe · You’ll confirm size and price before paying</div>
+      </div>
+
+      <div class="fineprint">
+        <h4>The details</h4>
+        <ul>
+          <li>Printed to order on museum-quality paper by a professional lab.</li>
+          <li id="maxnote"></li>
+          <li>Ships rolled or flat-packed with tracking, worldwide.</li>
+          <li>Every purchase includes a certificate note from the photographer.</li>
+          <li>Not thrilled? 30-day no-questions returns on unframed prints.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="base">
+      <span>© 2026 Clint Humphrey Photography. All images copyright the artist.</span>
+      <span>Printed to order · Shipped worldwide</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+<script>
+  const id = new URLSearchParams(location.search).get('id');
+  const p = PRODUCTS[id];
+  if (!p) { location.href = 'gallery.html'; }
+
+  document.title = p.title + ' — Clint Humphrey Photography';
+  document.getElementById('pimg').src = p.image;
+  document.getElementById('pimg').alt = p.title;
+  document.getElementById('ptitle').textContent = p.title;
+  document.getElementById('pbadge').textContent = p.tagline;
+  document.getElementById('pstory').textContent = p.story;
+  document.getElementById('maxnote').textContent = p.maxNote;
+
+  const sizesEl = document.getElementById('sizes');
+  const buyBtn = document.getElementById('buybtn');
+  let selected = 0;
+
+  function render() {
+    sizesEl.innerHTML = '';
+    p.options.forEach((o, i) => {
+      const b = document.createElement('button');
+      b.className = 'size-btn' + (i === selected ? ' selected' : '');
+      b.innerHTML = `<span class="s">${o.label}</span><span class="n">${o.detail}</span><span class="p">$${o.price}</span>`;
+      b.onclick = () => { selected = i; render(); };
+      sizesEl.appendChild(b);
+    });
+    const o = p.options[selected];
+    buyBtn.textContent = `Buy — ${o.label} · $${o.price}`;
+    buyBtn.href = o.stripe && o.stripe !== '#' ? o.stripe : '#';
+    if (!o.stripe || o.stripe === '#') {
+      buyBtn.onclick = (e) => {
+        e.preventDefault();
+        alert('Checkout is being connected — this print will be purchasable at launch.');
+      };
+    } else {
+      buyBtn.onclick = null;
+    }
+  }
+  render();
+</script>
+</body>
+</html>
