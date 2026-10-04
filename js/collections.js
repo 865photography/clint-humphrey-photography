@@ -1,1 +1,69 @@
-LyogQ29sbGVjdGlvbiBtZXRhZGF0YSDigJQgQ2xpbnQgSHVtcGhyZXkgUGhvdG9ncmFwaHkuCiAqIENPTExFQ1RJT05TIChzbHVnIC0+IGRpc3BsYXkgbmFtZSkgaXMgZGVmaW5lZCBpbiBqcy9wcm9kdWN0cy1uZXcuanMuCiAqIFRoaXMgZmlsZSBhZGRzIGNvdmVyIGltYWdlcyBhbmQgYmx1cmJzIGZvciB0aGUgOSBjb2xsZWN0aW9ucy4gKi8KCmNvbnN0IENPTExFQ1RJT05fTUVUQSA9IHsKICAid2lsZGxpZmUiOiB7CiAgICBpbWFnZTogImltYWdlcy9zdW5zZXQtc2lsaG91ZXR0ZS5qcGciLAogICAgYmx1cmI6ICJCaXJkcyBvZiBwcmV5IGF0IHRoZSBkZWNpc2l2ZSBtb21lbnQg4oCUIHRoZSBkaXZlLCB0aGUgc3RyaWtlLCB0aGUgY2F0Y2guIgogIH0sCiAgIm1haW4tc3RyZWV0IjogewogICAgaW1hZ2U6ICJpbWFnZXMvbmV3L2Nhc3RsZS1hdC1kdXNrLmpwZyIsCiAgICBibHVyYjogIk1haW4gU3RyZWV0IGF0IGl0cyBtb3N0IGNpbmVtYXRpYyDigJQgY2FzdGxlcywgbWFycXVlZXMsIGFuZCBuZW9uIGFmdGVyIGRhcmsuIgogIH0sCiAgInBhcmFkZSI6IHsKICAgIGltYWdlOiAiaW1hZ2VzL25ldy9waXhpZS1kdXN0LmpwZyIsCiAgICBibHVyYjogIlBhcmFkZSBkYXksIGZyb3plbiBtaWQtd2F2ZSDigJQgY2hhcmFjdGVycyBpbiBmdWxsIGZsaWdodCBkb3duIHRoZSByb3V0ZS4iCiAgfSwKICAiZ2FsYXh5cy1lZGdlIjogewogICAgaW1hZ2U6ICJpbWFnZXMvbmV3L3RpZS1zdW5zZXQuanBnIiwKICAgIGJsdXJiOiAiQmF0dXUgYXQgZ29sZGVuIGhvdXIg4oCUIHN0YXJzaGlwcywgc3BpcmVzLCBhbmQgZGVzZXJ0IGxpZ2h0LiIKICB9LAogICJyaWRlcyI6IHsKICAgIGltYWdlOiAiaW1hZ2VzL25ldy9tb25vcmFpbC5qcGciLAogICAgYmx1cmI6ICJUaGUgcGFyayBpbiBtb3Rpb24g4oCUIG1vbm9yYWlscywgY29hc3RlcnMsIGFuZCBtaWR3YXkgY29sb3IuIgogIH0sCiAgImFtZXJpY2FuYSI6IHsKICAgIGltYWdlOiAiaW1hZ2VzL25ldy90aGUtZ2V0YXdheS5qcGciLAogICAgYmx1cmI6ICJSb2Fkc2lkZSBBbWVyaWNhIOKAlCBjaHJvbWUsIG5lb24sIGFuZCB3ZWF0aGVyZWQgcGFpbnQuIgogIH0sCiAgImdvbGRlbi1ob3VyIjogewogICAgaW1hZ2U6ICJpbWFnZXMvbmV3L3N0aWxsLXdhdGVyLmpwZyIsCiAgICBibHVyYjogIlRoZSBsYXN0IGxpZ2h0IG9mIHRoZSBkYXksIGhlbGQgb24gd2F0ZXIgYW5kIGdsYXNzLiIKICB9LAogICJvbi10aGUtd2luZyI6IHsKICAgIGltYWdlOiAiaW1hZ2VzL25ldy93aW5ncy11cC5qcGciLAogICAgYmx1cmI6ICJCaXJkcyBpbiBmbGlnaHQg4oCUIG9zcHJleXMsIGNyYW5lcywgYW5kIGNhcmRpbmFscyBvbiB0aGUgbW92ZS4iCiAgfSwKICAid2lsZC1wb3J0cmFpdHMiOiB7CiAgICBpbWFnZTogImltYWdlcy9uZXcvYW1iZXItZXllLmpwZyIsCiAgICBibHVyYjogIkNsb3NlIGVuY291bnRlcnMg4oCUIGEgc2luZ2xlIGFtYmVyIGV5ZSBpbiB0aGUgZGFyay4iCiAgfQp9OwoKLyogVGhlIDkgY29sbGVjdGlvbnMgaW4gZGlzcGxheSBvcmRlci4gKi8KY29uc3QgQ09MTEVDVElPTl9PUkRFUiA9IFsKICAid2lsZGxpZmUiLCAibWFpbi1zdHJlZXQiLCAicGFyYWRlIiwgImdhbGF4eXMtZWRnZSIsICJyaWRlcyIsCiAgImFtZXJpY2FuYSIsICJnb2xkZW4taG91ciIsICJvbi10aGUtd2luZyIsICJ3aWxkLXBvcnRyYWl0cyIKXTsKCi8qIE1lcmdlZCBjYXRhbG9nOiBleGlzdGluZyAxNiAoY29sbGVjdGlvbiAnd2lsZGxpZmUnKSArIDUyIG5ldy4gKi8KY29uc3QgQUxMX1BST0RVQ1RTID0gKCgpID0+IHsKICBjb25zdCBvdXQgPSB7fTsKICBmb3IgKGNvbnN0IFtpZCwgcF0gb2YgT2JqZWN0LmVudHJpZXMoUFJPRFVDVFMpKSB7CiAgICBvdXRbaWRdID0gT2JqZWN0LmFzc2lnbih7fSwgcCwgeyBjb2xsZWN0aW9uOiAid2lsZGxpZmUiIH0pOwogIH0KICBmb3IgKGNvbnN0IFtpZCwgcF0gb2YgT2JqZWN0LmVudHJpZXMoTkVXX1BST0RVQ1RTKSkgewogICAgb3V0W2lkXSA9IHA7CiAgfQogIHJldHVybiBvdXQ7Cn0pKCk7CgpmdW5jdGlvbiBjb2xsZWN0aW9uTmFtZShzbHVnKSB7CiAgaWYgKHNsdWcgPT09ICJ3aWxkbGlmZSIpIHJldHVybiAiV2lsZGxpZmUiOwogIHJldHVybiAodHlwZW9mIENPTExFQ1RJT05TICE9PSAidW5kZWZpbmVkIiAmJiBDT0xMRUNUSU9OU1tzbHVnXSkgfHwgc2x1ZzsKfQoKZnVuY3Rpb24gY291bnRJbkNvbGxlY3Rpb24oc2x1ZykgewogIHJldHVybiBPYmplY3QudmFsdWVzKEFMTF9QUk9EVUNUUykuZmlsdGVyKHAgPT4gcC5jb2xsZWN0aW9uID09PSBzbHVnKS5sZW5ndGg7Cn0K
+/* Collection metadata — Clint Humphrey Photography.
+ * COLLECTIONS (slug -> display name) is defined in js/products-new.js.
+ * This file adds cover images and blurbs for the 9 collections. */
+
+const COLLECTION_META = {
+  "wildlife": {
+    image: "images/sunset-silhouette.jpg",
+    blurb: "Birds of prey at the decisive moment — the dive, the strike, the catch."
+  },
+  "main-street": {
+    image: "images/new/castle-at-dusk.jpg",
+    blurb: "Main Street at its most cinematic — castles, marquees, and neon after dark."
+  },
+  "parade": {
+    image: "images/new/pixie-dust.jpg",
+    blurb: "Parade day, frozen mid-wave — characters in full flight down the route."
+  },
+  "galaxys-edge": {
+    image: "images/new/tie-sunset.jpg",
+    blurb: "Batuu at golden hour — starships, spires, and desert light."
+  },
+  "rides": {
+    image: "images/new/monorail.jpg",
+    blurb: "The park in motion — monorails, coasters, and midway color."
+  },
+  "americana": {
+    image: "images/new/the-getaway.jpg",
+    blurb: "Roadside America — chrome, neon, and weathered paint."
+  },
+  "golden-hour": {
+    image: "images/new/still-water.jpg",
+    blurb: "The last light of the day, held on water and glass."
+  },
+  "on-the-wing": {
+    image: "images/new/wings-up.jpg",
+    blurb: "Birds in flight — ospreys, cranes, and cardinals on the move."
+  },
+  "wild-portraits": {
+    image: "images/new/amber-eye.jpg",
+    blurb: "Close encounters — a single amber eye in the dark."
+  }
+};
+
+/* The 9 collections in display order. */
+const COLLECTION_ORDER = [
+  "wildlife", "main-street", "parade", "galaxys-edge", "rides",
+  "americana", "golden-hour", "on-the-wing", "wild-portraits"
+];
+
+/* Merged catalog: existing 16 (collection 'wildlife') + 52 new. */
+const ALL_PRODUCTS = (() => {
+  const out = {};
+  for (const [id, p] of Object.entries(PRODUCTS)) {
+    out[id] = Object.assign({}, p, { collection: "wildlife" });
+  }
+  for (const [id, p] of Object.entries(NEW_PRODUCTS)) {
+    out[id] = p;
+  }
+  return out;
+})();
+
+function collectionName(slug) {
+  if (slug === "wildlife") return "Wildlife";
+  return (typeof COLLECTIONS !== "undefined" && COLLECTIONS[slug]) || slug;
+}
+
+function countInCollection(slug) {
+  return Object.values(ALL_PRODUCTS).filter(p => p.collection === slug).length;
+}

@@ -1,1 +1,136 @@
-Ly8gUE9TVCAvYXBpL3VwbG9hZC1maW5pc2gg4oCUIHZlcmlmeSBwYXNzd29yZCwgcmVhc3NlbWJsZSBjaHVuayBibG9icyBpbnRvIG9uZQovLyBmaWxlIGJsb2IsIGFuZCBjb21taXQgaXQgdG8gbWFpbiBhdCBpbmNvbWluZy88dGltZXN0YW1wPl88ZmlsZW5hbWU+Lgpjb25zdCBjcnlwdG8gPSByZXF1aXJlKCdjcnlwdG8nKTsKCmNvbnN0IFJFUE8gPSBwcm9jZXNzLmVudi5JTkNPTUlOR19SRVBPIHx8ICc4NjVwaG90b2dyYXBoeS9jbGludC1odW1waHJleS1waG90b2dyYXBoeSc7CmNvbnN0IEJSQU5DSCA9ICdtYWluJzsKCmZ1bmN0aW9uIGdoKHBhdGgsIHRva2VuLCBvcHRzID0ge30pIHsKICByZXR1cm4gZmV0Y2goJ2h0dHBzOi8vYXBpLmdpdGh1Yi5jb20vcmVwb3MvJyArIFJFUE8gKyBwYXRoLCBPYmplY3QuYXNzaWduKHsKICAgIGhlYWRlcnM6IHsKICAgICAgJ0F1dGhvcml6YXRpb24nOiAnQmVhcmVyICcgKyB0b2tlbiwKICAgICAgJ0FjY2VwdCc6ICdhcHBsaWNhdGlvbi92bmQuZ2l0aHViK2pzb24nLAogICAgICAnVXNlci1BZ2VudCc6ICdjaHAtc3R1ZGlvLXVwbG9hZCcKICAgIH0KICB9LCBvcHRzKSk7Cn0KCmZ1bmN0aW9uIHNhbml0aXplKG5hbWUpIHsKICBjb25zdCBiYXNlID0gU3RyaW5nKG5hbWUgfHwgJycpLnNwbGl0KC9bXFwvXS8pLnBvcCgpOwogIGNvbnN0IGNsZWFuID0gYmFzZS5yZXBsYWNlKC9bXkEtWmEtejAtOS5fLV0vZywgJ18nKS5yZXBsYWNlKC9fKy9nLCAnXycpOwogIHJldHVybiBjbGVhbi5zbGljZSgwLCAxMjApIHx8ICd1cGxvYWQuYmluJzsKfQoKZnVuY3Rpb24gYmFkKHJlcywgY29kZSwgbXNnKSB7CiAgcmVzLnN0YXR1cyhjb2RlKS5qc29uKHsgZXJyb3I6IG1zZyB9KTsKfQoKbW9kdWxlLmV4cG9ydHMgPSBhc3luYyAocmVxLCByZXMpID0+IHsKICBpZiAocmVxLm1ldGhvZCAhPT0gJ1BPU1QnKSB7IGJhZChyZXMsIDQwNSwgJ1BPU1Qgb25seScpOyByZXR1cm47IH0KCiAgY29uc3QgeyBwYXNzd29yZCwgZmlsZW5hbWUsIGNvbnRlbnRUeXBlLCBibG9iU2hhcyB9ID0gcmVxLmJvZHkgfHwge307CiAgY29uc3QgZXhwZWN0ZWQgPSBwcm9jZXNzLmVudi5VUExPQURfUEFTU1dPUkQ7CiAgaWYgKCFleHBlY3RlZCB8fCB0eXBlb2YgcGFzc3dvcmQgIT09ICdzdHJpbmcnIHx8ICFwYXNzd29yZCkgeyBiYWQocmVzLCA0MDEsICd1bmF1dGhvcml6ZWQnKTsgcmV0dXJuOyB9CiAgdHJ5IHsKICAgIGNvbnN0IGEgPSBCdWZmZXIuZnJvbShwYXNzd29yZCwgJ3V0ZjgnKTsKICAgIGNvbnN0IGIgPSBCdWZmZXIuZnJvbShleHBlY3RlZCwgJ3V0ZjgnKTsKICAgIGlmIChhLmxlbmd0aCAhPT0gYi5sZW5ndGggfHwgIWNyeXB0by50aW1pbmdTYWZlRXF1YWwoYSwgYikpIHsgYmFkKHJlcywgNDAxLCAndW5hdXRob3JpemVkJyk7IHJldHVybjsgfQogIH0gY2F0Y2ggKGUpIHsgYmFkKHJlcywgNDAxLCAndW5hdXRob3JpemVkJyk7IHJldHVybjsgfQoKICBpZiAoIUFycmF5LmlzQXJyYXkoYmxvYlNoYXMpIHx8IGJsb2JTaGFzLmxlbmd0aCA9PT0gMCkgeyBiYWQocmVzLCA0MDAsICdubyBwYXJ0cycpOyByZXR1cm47IH0KICBpZiAoYmxvYlNoYXMubGVuZ3RoID4gMjAwMCkgeyBiYWQocmVzLCA0MDAsICd0b28gbWFueSBwYXJ0cycpOyByZXR1cm47IH0KCiAgY29uc3QgdG9rZW4gPSBwcm9jZXNzLmVudi5HSVRIVUJfVE9LRU47CiAgaWYgKCF0b2tlbikgeyBiYWQocmVzLCA1MDAsICdzZXJ2ZXIgbm90IGNvbmZpZ3VyZWQnKTsgcmV0dXJuOyB9CgogIGNvbnN0IHNhZmUgPSBzYW5pdGl6ZShmaWxlbmFtZSk7CiAgY29uc3Qgc3RhbXAgPSBuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCkucmVwbGFjZSgvWy06VF0vZywgJycpLnNsaWNlKDAsIDE0KTsgLy8gWVlZWU1NRERISE1NU1MKICBjb25zdCBkZXN0UGF0aCA9ICdpbmNvbWluZy8nICsgc3RhbXAgKyAnXycgKyBzYWZlOwoKICB0cnkgewogICAgLy8gMS4gRmV0Y2ggZXZlcnkgcGFydCBibG9iIGFuZCBjb25jYXRlbmF0ZS4KICAgIGNvbnN0IHBhcnRzID0gW107CiAgICBmb3IgKGNvbnN0IHNoYSBvZiBibG9iU2hhcykgewogICAgICBpZiAodHlwZW9mIHNoYSAhPT0gJ3N0cmluZycgfHwgIS9eWzAtOWEtZl17NDB9JC8udGVzdChzaGEpKSB7IGJhZChyZXMsIDQwMCwgJ2JhZCBwYXJ0IHNoYScpOyByZXR1cm47IH0KICAgICAgY29uc3QgciA9IGF3YWl0IGdoKCcvZ2l0L2Jsb2JzLycgKyBzaGEsIHRva2VuKTsKICAgICAgaWYgKCFyLm9rKSB7IGJhZChyZXMsIDUwMiwgJ2Jsb2IgZmV0Y2ggZmFpbGVkJyk7IHJldHVybjsgfQogICAgICBjb25zdCBqID0gYXdhaXQgci5qc29uKCk7CiAgICAgIC8vIEdpdEh1YiBtYXkgcmV0dXJuIGNvbnRlbnQgd2l0aCBuZXdsaW5lczsgc3RyaXAgdGhlbSBiZWZvcmUgY29uY2F0LgogICAgICBwYXJ0cy5wdXNoKFN0cmluZyhqLmNvbnRlbnQgfHwgJycpLnJlcGxhY2UoL1xuL2csICcnKSk7CiAgICB9CiAgICBjb25zdCBmdWxsQjY0ID0gcGFydHMuam9pbignJyk7CgogICAgLy8gMi4gQ3JlYXRlIHRoZSBhc3NlbWJsZWQgYmxvYi4KICAgIGNvbnN0IGJjID0gYXdhaXQgZ2goJy9naXQvYmxvYnMnLCB0b2tlbiwgewogICAgICBtZXRob2Q6ICdQT1NUJywKICAgICAgaGVhZGVyczogewogICAgICAgICdBdXRob3JpemF0aW9uJzogJ0JlYXJlciAnICsgdG9rZW4sCiAgICAgICAgJ0FjY2VwdCc6ICdhcHBsaWNhdGlvbi92bmQuZ2l0aHViK2pzb24nLAogICAgICAgICdDb250ZW50LVR5cGUnOiAnYXBwbGljYXRpb24vanNvbicsCiAgICAgICAgJ1VzZXItQWdlbnQnOiAnY2hwLXN0dWRpby11cGxvYWQnCiAgICAgIH0sCiAgICAgIGJvZHk6IEpTT04uc3RyaW5naWZ5KHsgY29udGVudDogZnVsbEI2NCwgZW5jb2Rpbmc6ICdiYXNlNjQnIH0pCiAgICB9KTsKICAgIGlmICghYmMub2spIHsgYmFkKHJlcywgNTAyLCAnYXNzZW1ibGUgYmxvYiBmYWlsZWQnKTsgcmV0dXJuOyB9CiAgICBjb25zdCBmaWxlQmxvYiA9IGF3YWl0IGJjLmpzb24oKTsKCiAgICAvLyAzLiBCdWlsZCB0cmVlIG9uIHRvcCBvZiBtYWluJ3MgY3VycmVudCB0cmVlLgogICAgY29uc3QgcmVmUiA9IGF3YWl0IGdoKCcvZ2l0L3JlZi9oZWFkcy8nICsgQlJBTkNILCB0b2tlbik7CiAgICBpZiAoIXJlZlIub2spIHsgYmFkKHJlcywgNTAyLCAncmVmIGxvb2t1cCBmYWlsZWQnKTsgcmV0dXJuOyB9CiAgICBjb25zdCByZWYgPSBhd2FpdCByZWZSLmpzb24oKTsKICAgIGNvbnN0IGJhc2VTaGEgPSByZWYub2JqZWN0LnNoYTsKICAgIGNvbnN0IGNvbW1pdFIgPSBhd2FpdCBnaCgnL2dpdC9jb21taXRzLycgKyBiYXNlU2hhLCB0b2tlbik7CiAgICBpZiAoIWNvbW1pdFIub2spIHsgYmFkKHJlcywgNTAyLCAnY29tbWl0IGxvb2t1cCBmYWlsZWQnKTsgcmV0dXJuOyB9CiAgICBjb25zdCBiYXNlVHJlZSA9IChhd2FpdCBjb21taXRSLmpzb24oKSkudHJlZS5zaGE7CgogICAgY29uc3QgdHJlZVIgPSBhd2FpdCBnaCgnL2dpdC90cmVlcycsIHRva2VuLCB7CiAgICAgIG1ldGhvZDogJ1BPU1QnLAogICAgICBoZWFkZXJzOiB7CiAgICAgICAgJ0F1dGhvcml6YXRpb24nOiAnQmVhcmVyICcgKyB0b2tlbiwKICAgICAgICAnQWNjZXB0JzogJ2FwcGxpY2F0aW9uL3ZuZC5naXRodWIranNvbicsCiAgICAgICAgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJywKICAgICAgICAnVXNlci1BZ2VudCc6ICdjaHAtc3R1ZGlvLXVwbG9hZCcKICAgICAgfSwKICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoewogICAgICAgIGJhc2VfdHJlZTogYmFzZVRyZWUsCiAgICAgICAgdHJlZTogW3sgcGF0aDogZGVzdFBhdGgsIG1vZGU6ICcxMDA2NDQnLCB0eXBlOiAnYmxvYicsIHNoYTogZmlsZUJsb2Iuc2hhIH1dCiAgICAgIH0pCiAgICB9KTsKICAgIGlmICghdHJlZVIub2spIHsgYmFkKHJlcywgNTAyLCAndHJlZSBjcmVhdGUgZmFpbGVkJyk7IHJldHVybjsgfQogICAgY29uc3QgdHJlZSA9IGF3YWl0IHRyZWVSLmpzb24oKTsKCiAgICAvLyA0LiBDb21taXQgYW5kIG1vdmUgdGhlIGJyYW5jaC4KICAgIGNvbnN0IGNvbW1pdENyID0gYXdhaXQgZ2goJy9naXQvY29tbWl0cycsIHRva2VuLCB7CiAgICAgIG1ldGhvZDogJ1BPU1QnLAogICAgICBoZWFkZXJzOiB7CiAgICAgICAgJ0F1dGhvcml6YXRpb24nOiAnQmVhcmVyICcgKyB0b2tlbiwKICAgICAgICAnQWNjZXB0JzogJ2FwcGxpY2F0aW9uL3ZuZC5naXRodWIranNvbicsCiAgICAgICAgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJywKICAgICAgICAnVXNlci1BZ2VudCc6ICdjaHAtc3R1ZGlvLXVwbG9hZCcKICAgICAgfSwKICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoewogICAgICAgIG1lc3NhZ2U6ICdzdHVkaW8gdXBsb2FkOiAnICsgZGVzdFBhdGgsCiAgICAgICAgdHJlZTogdHJlZS5zaGEsCiAgICAgICAgcGFyZW50czogW2Jhc2VTaGFdCiAgICAgIH0pCiAgICB9KTsKICAgIGlmICghY29tbWl0Q3Iub2spIHsgYmFkKHJlcywgNTAyLCAnY29tbWl0IGNyZWF0ZSBmYWlsZWQnKTsgcmV0dXJuOyB9CiAgICBjb25zdCBuZXdDb21taXQgPSBhd2FpdCBjb21taXRDci5qc29uKCk7CgogICAgY29uc3QgdXBkUiA9IGF3YWl0IGdoKCcvZ2l0L3JlZnMvaGVhZHMvJyArIEJSQU5DSCwgdG9rZW4sIHsKICAgICAgbWV0aG9kOiAnUEFUQ0gnLAogICAgICBoZWFkZXJzOiB7CiAgICAgICAgJ0F1dGhvcml6YXRpb24nOiAnQmVhcmVyICcgKyB0b2tlbiwKICAgICAgICAnQWNjZXB0JzogJ2FwcGxpY2F0aW9uL3ZuZC5naXRodWIranNvbicsCiAgICAgICAgJ0NvbnRlbnQtVHlwZSc6ICdhcHBsaWNhdGlvbi9qc29uJywKICAgICAgICAnVXNlci1BZ2VudCc6ICdjaHAtc3R1ZGlvLXVwbG9hZCcKICAgICAgfSwKICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoeyBzaGE6IG5ld0NvbW1pdC5zaGEgfSkKICAgIH0pOwogICAgaWYgKCF1cGRSLm9rKSB7IGJhZChyZXMsIDUwMiwgJ3JlZiB1cGRhdGUgZmFpbGVkJyk7IHJldHVybjsgfQoKICAgIHJlcy5zdGF0dXMoMjAwKS5qc29uKHsgb2s6IHRydWUsIHBhdGg6IGRlc3RQYXRoIH0pOwogIH0gY2F0Y2ggKGUpIHsKICAgIGJhZChyZXMsIDUwMiwgJ3VwbG9hZCBmYWlsZWQnKTsKICB9Cn07Cg==
+// POST /api/upload-finish — verify password, reassemble chunk blobs into one
+// file blob, and commit it to main at incoming/<timestamp>_<filename>.
+const crypto = require('crypto');
+
+const REPO = process.env.INCOMING_REPO || '865photography/clint-humphrey-photography';
+const BRANCH = 'main';
+
+function gh(path, token, opts = {}) {
+  return fetch('https://api.github.com/repos/' + REPO + path, Object.assign({
+    headers: {
+      'Authorization': 'Bearer ' + token,
+      'Accept': 'application/vnd.github+json',
+      'User-Agent': 'chp-studio-upload'
+    }
+  }, opts));
+}
+
+function sanitize(name) {
+  const base = String(name || '').split(/[\\/]/).pop();
+  const clean = base.replace(/[^A-Za-z0-9._-]/g, '_').replace(/_+/g, '_');
+  return clean.slice(0, 120) || 'upload.bin';
+}
+
+function bad(res, code, msg) {
+  res.status(code).json({ error: msg });
+}
+
+module.exports = async (req, res) => {
+  if (req.method !== 'POST') { bad(res, 405, 'POST only'); return; }
+
+  const { password, filename, contentType, blobShas } = req.body || {};
+  const expected = process.env.UPLOAD_PASSWORD;
+  if (!expected || typeof password !== 'string' || !password) { bad(res, 401, 'unauthorized'); return; }
+  try {
+    const a = Buffer.from(password, 'utf8');
+    const b = Buffer.from(expected, 'utf8');
+    if (a.length !== b.length || !crypto.timingSafeEqual(a, b)) { bad(res, 401, 'unauthorized'); return; }
+  } catch (e) { bad(res, 401, 'unauthorized'); return; }
+
+  if (!Array.isArray(blobShas) || blobShas.length === 0) { bad(res, 400, 'no parts'); return; }
+  if (blobShas.length > 2000) { bad(res, 400, 'too many parts'); return; }
+
+  const token = process.env.GITHUB_TOKEN;
+  if (!token) { bad(res, 500, 'server not configured'); return; }
+
+  const safe = sanitize(filename);
+  const stamp = new Date().toISOString().replace(/[-:T]/g, '').slice(0, 14); // YYYYMMDDHHMMSS
+  const destPath = 'incoming/' + stamp + '_' + safe;
+
+  try {
+    // 1. Fetch every part blob and concatenate.
+    const parts = [];
+    for (const sha of blobShas) {
+      if (typeof sha !== 'string' || !/^[0-9a-f]{40}$/.test(sha)) { bad(res, 400, 'bad part sha'); return; }
+      const r = await gh('/git/blobs/' + sha, token);
+      if (!r.ok) { bad(res, 502, 'blob fetch failed'); return; }
+      const j = await r.json();
+      // GitHub may return content with newlines; strip them before concat.
+      parts.push(String(j.content || '').replace(/\n/g, ''));
+    }
+    const fullB64 = parts.join('');
+
+    // 2. Create the assembled blob.
+    const bc = await gh('/git/blobs', token, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+        'User-Agent': 'chp-studio-upload'
+      },
+      body: JSON.stringify({ content: fullB64, encoding: 'base64' })
+    });
+    if (!bc.ok) { bad(res, 502, 'assemble blob failed'); return; }
+    const fileBlob = await bc.json();
+
+    // 3. Build tree on top of main's current tree.
+    const refR = await gh('/git/ref/heads/' + BRANCH, token);
+    if (!refR.ok) { bad(res, 502, 'ref lookup failed'); return; }
+    const ref = await refR.json();
+    const baseSha = ref.object.sha;
+    const commitR = await gh('/git/commits/' + baseSha, token);
+    if (!commitR.ok) { bad(res, 502, 'commit lookup failed'); return; }
+    const baseTree = (await commitR.json()).tree.sha;
+
+    const treeR = await gh('/git/trees', token, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+        'User-Agent': 'chp-studio-upload'
+      },
+      body: JSON.stringify({
+        base_tree: baseTree,
+        tree: [{ path: destPath, mode: '100644', type: 'blob', sha: fileBlob.sha }]
+      })
+    });
+    if (!treeR.ok) { bad(res, 502, 'tree create failed'); return; }
+    const tree = await treeR.json();
+
+    // 4. Commit and move the branch.
+    const commitCr = await gh('/git/commits', token, {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+        'User-Agent': 'chp-studio-upload'
+      },
+      body: JSON.stringify({
+        message: 'studio upload: ' + destPath,
+        tree: tree.sha,
+        parents: [baseSha]
+      })
+    });
+    if (!commitCr.ok) { bad(res, 502, 'commit create failed'); return; }
+    const newCommit = await commitCr.json();
+
+    const updR = await gh('/git/refs/heads/' + BRANCH, token, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': 'Bearer ' + token,
+        'Accept': 'application/vnd.github+json',
+        'Content-Type': 'application/json',
+        'User-Agent': 'chp-studio-upload'
+      },
+      body: JSON.stringify({ sha: newCommit.sha })
+    });
+    if (!updR.ok) { bad(res, 502, 'ref update failed'); return; }
+
+    res.status(200).json({ ok: true, path: destPath });
+  } catch (e) {
+    bad(res, 502, 'upload failed');
+  }
+};
