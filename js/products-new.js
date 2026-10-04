@@ -197,5 +197,36 @@ const NEW_PRODUCTS = {
       { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: 'https://buy.stripe.com/7sY00i1yk47T0etazU3Ru1S' },
     ],
   },
+  'black-bear': {
+    title: "Black Bear",
+    tagline: "A black bear pauses in the green — eye to eye.",
+    story: "Caught mid-stride in dappled light, this black bear turns to meet the lens. Dark fur against green foliage, every detail sharp. A rare moment of wild eye contact.",
+    image: "images/new/black-bear.jpg",
+    collection: "mammals",
+    badge: "New arrival",
+    maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
+    options: [
+      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
+      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
+      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
+      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
+      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
+    ],
+  },
+  'wild-turkey': {
+    title: "Wild Turkey",
+    tagline: "Iridescent bronze and hard-won dignity.",
+    story: "A wild turkey tom in full close portrait — the textured red and blue head, the bronze-barred feathers catching light. An often-overlooked bird, rendered with the attention it deserves.",
+    image: "images/new/wild-turkey.jpg",
+    collection: "game-birds",
+    badge: "New arrival",
+    maxNote: "Available up to 24\u00d736 \u2014 printed from the full-resolution original.",
+    options: [
+      { label: "12 \u00d7 18 in", detail: "Fine-art poster, unframed", price: 750, stripe: '#' },
+      { label: "18 \u00d7 24 in", detail: "Fine-art poster, unframed", price: 950, stripe: '#' },
+      { label: "24 \u00d7 36 in", detail: "Fine-art poster, unframed", price: 1200, stripe: '#' },
+      { label: "18 \u00d7 24 in", detail: "Framed print, black wood", price: 1600, stripe: '#' },
+      { label: "24 \u00d7 36 in", detail: "Gallery canvas", price: 1800, stripe: '#' },
+    ],
+  },
 };
-
