@@ -28,7 +28,7 @@ function bad(res, code, msg) {
 module.exports = async (req, res) => {
   if (req.method !== 'POST') { bad(res, 405, 'POST only'); return; }
 
-  const { password, filename, contentType, blobShas } = req.body || {};
+  const { password, filename, contentType, blobShas, totalSize } = req.body || {};
   const expected = process.env.UPLOAD_PASSWORD;
   if (!expected || typeof password !== 'string' || !password) { bad(res, 401, 'unauthorized'); return; }
   try {
@@ -59,6 +59,16 @@ module.exports = async (req, res) => {
       parts.push(String(j.content || '').replace(/\n/g, ''));
     }
     const fullB64 = parts.join('');
+    const buf = Buffer.from(fullB64, 'base64');
+    console.log(JSON.stringify({
+      upload: destPath, parts: blobShas.length,
+      partLens: parts.map(p => p.length),
+      bytes: buf.length, expected: totalSize || null
+    }));
+    if (Number.isInteger(totalSize) && totalSize > 0 && buf.length !== totalSize) {
+      bad(res, 502, 'size mismatch: assembled ' + buf.length + ' bytes, expected ' + totalSize);
+      return;
+    }
 
     // 2. Create the assembled blob.
     const bc = await gh('/git/blobs', token, {
@@ -69,7 +79,7 @@ module.exports = async (req, res) => {
         'Content-Type': 'application/json',
         'User-Agent': 'chp-studio-upload'
       },
-      body: JSON.stringify({ content: fullB64, encoding: 'base64' })
+      body: JSON.stringify({ content: buf.toString('base64'), encoding: 'base64' })
     });
     if (!bc.ok) { bad(res, 502, 'assemble blob failed'); return; }
     const fileBlob = await bc.json();

@@ -88,7 +88,7 @@ async function uploadOne(file, ui) {
   const fin = await fetch('/api/upload-finish', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ password, filename: file.name, contentType: file.type || 'application/octet-stream', blobShas })
+    body: JSON.stringify({ password, filename: file.name, contentType: file.type || 'application/octet-stream', blobShas, totalSize: file.size, total })
   });
   if (!fin.ok) {
     const t = await fin.text();
