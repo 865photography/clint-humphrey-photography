@@ -3,115 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Prints — Clint Humphrey Photography</title>
-<meta name="description" content="Browse all fine-art prints by Clint Humphrey — birds, mammals, and Americana.">
+<title>Gallery — Clint Humphrey Photography</title>
+<meta name="description" content="Browse all fine-art wildlife prints by Clint Humphrey — ospreys, water birds, mammals, and Americana.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clint Humphrey Photography">
-<meta property="og:title" content="All Prints — Clint Humphrey Photography">
-<meta property="og:image" content="https://clint-humphrey-photography.vercel.app/images/new/amber-eye.jpg">
-<meta property="og:url" content="https://clint-humphrey-photography.vercel.app/gallery.html">
-<link rel="stylesheet" href="css/style.css?v=2">
+<meta property="og:title" content="Gallery — Clint Humphrey Photography">
+<link rel="stylesheet" href="css/site.css">
 </head>
 <body>
+<a class="skip-link" href="#grid">Skip to photographs</a>
 
-<header class="site">
-  <div class="wrap">
-    <a class="brand" href="index.html">Clint Humphrey <span>Photography</span></a>
-    <nav class="main">
-      <a href="index.html">Home</a>
-      <a href="gallery.html" class="active">Prints</a>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">Clint Humphrey<small>Photography</small></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="gallery.html">Gallery</a>
+      <a href="explorer.html">Explorer</a>
       <a href="about.html">About</a>
     </nav>
   </div>
 </header>
 
-<div style="padding-top:64px">
-  <h2 class="section-title">The Gallery</h2>
-  <p class="section-sub">Every photograph is offered only in the sizes its resolution honestly supports — so what arrives on your wall is always sharp.</p>
-  <div class="filters" id="filters"></div>
-  <div class="cards" id="all"></div>
-</div>
+<main class="wrap page-top">
+  <h1 style="font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,38px);margin:0 0 4px;">Gallery</h1>
+  <p style="color:var(--muted);margin:0 0 6px;max-width:62ch;">Every photograph is offered only in the sizes its resolution honestly supports.</p>
 
-<footer class="site">
-  <div class="wrap wide">
-    <div class="cols">
-      <div>
-        <div class="brandline">Clint Humphrey Photography</div>
-        <p>Fine-art prints from original frames. Printed to order and shipped worldwide.</p>
-      </div>
-      <div>
-        <h5>Shop</h5>
-        <ul><li><a href="gallery.html">All prints</a></li></ul>
-      </div>
-      <div>
-        <h5>Studio</h5>
-        <ul><li><a href="about.html">About</a></li></ul>
-      </div>
-    </div>
-    <div class="base">
-      <span>© 2026 Clint Humphrey Photography. All images copyright the artist.</span>
-      <span>Printed to order · Shipped worldwide</span>
-    </div>
+  <div class="filters" id="filters" role="tablist" aria-label="Filter by collection"></div>
+  <div class="masonry" id="grid"></div>
+  <noscript>
+    <p style="color:var(--muted)">JavaScript is off — here is the full catalog:</p>
+    <ul style="columns:2;list-style:none;padding:0;"><li style="margin-bottom:6px"><a href="photo.html?id=sunset-silhouette">Sunset Silhouette</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=impact">Impact</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=talons-out">Talons Out</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=tandem">Tandem</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=the-catch">The Catch</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=golden-hour">Golden Hour</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=the-dive">The Dive</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=the-tussle">The Tussle</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=the-prize">The Prize</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=the-crossing">The Crossing</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=talons-first">Talons First</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=liftoff">Liftoff</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=water-off">Water Off</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=hard-bank">Hard Bank</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=rising">Rising</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=soaring">Soaring</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=the-commute">The Commute</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=wings-up">Wings Up</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=delivery">Delivery</a> <span style="color:#6e6c68">(Osprey)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=blue-hunter">Blue Hunter</a> <span style="color:#6e6c68">(Great Blue Heron)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=touchdown">Touchdown</a> <span style="color:#6e6c68">(Ducks)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=shake-down">Shake Down</a> <span style="color:#6e6c68">(Ducks)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=iridescence">Iridescence</a> <span style="color:#6e6c68">(Ducks)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=the-crane">The Crane</a> <span style="color:#6e6c68">(Water Birds)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=killdeer">Killdeer</a> <span style="color:#6e6c68">(Water Birds)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=amber-eye">Amber Eye</a> <span style="color:#6e6c68">(Mammals)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=last-cast">Last Cast</a> <span style="color:#6e6c68">(Americana)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=fire-plug">Fire Plug</a> <span style="color:#6e6c68">(Americana)</span></li><li style="margin-bottom:6px"><a href="photo.html?id=the-getaway">The Getaway</a> <span style="color:#6e6c68">(Americana)</span></li></ul>
+  </noscript>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 Clint Humphrey Photography. All images copyright the artist.</p>
+    <nav aria-label="Footer">
+      <a href="gallery.html">Gallery</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="about.html">About</a>
+    </nav>
   </div>
 </footer>
 
-<script src="js/site.js?v=8"></script>
-<script src="js/products-new.js?v=8"></script>
-<script src="js/collections.js?v=8"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
 <script>
-  const grid = document.getElementById('all');
-  const filtersEl = document.getElementById('filters');
-  const params = new URLSearchParams(location.search);
-  let active = params.get('c') || 'all';
-  if (active !== 'all' && !COLLECTION_ORDER.includes(active)) active = 'all';
+  document.addEventListener('DOMContentLoaded', function () {
+    var params = new URLSearchParams(location.search);
+    var activeC = params.get('c');
+    var activeG = params.get('g');
+    var valid = CHPApp.populatedCollections();
+    if (activeC && valid.indexOf(activeC) === -1) activeC = null;
+    var group = activeG ? CHPApp.groupBySlug(activeG) : null;
+    if (group && !group.collections.some(function (s) { return valid.indexOf(s) !== -1; })) group = null;
 
-  function render() {
-    filtersEl.innerHTML = '';
-    const mk = (slug, label) => {
-      const b = document.createElement('button');
-      b.textContent = label;
-      if (slug === active) b.className = 'on';
-      b.onclick = () => { active = slug; render(); };
-      filtersEl.appendChild(b);
-    };
-    mk('all', 'All');
-    // Grouped: Birds sub-collections together, then Mammals, Americana
-    COLLECTION_GROUPS.forEach(g => {
-      g.collections.forEach(slug => {
-        const n = countInCollection(slug);
-        if (n > 0) mk(slug, collectionName(slug));
+    var filtersEl = document.getElementById('filters');
+    var grid = document.getElementById('grid');
+
+    function currentPairs() {
+      if (activeC) return CHPApp.productsIn(activeC);
+      if (group) {
+        var out = [];
+        group.collections.forEach(function (slug) {
+          if (valid.indexOf(slug) !== -1) out = out.concat(CHPApp.productsIn(slug));
+        });
+        return out;
+      }
+      var out = [];
+      valid.forEach(function (slug) { out = out.concat(CHPApp.productsIn(slug)); });
+      return out;
+    }
+
+    function setActive(c, g) {
+      activeC = c; activeG = g || null;
+      group = activeG ? CHPApp.groupBySlug(activeG) : null;
+      var url = 'gallery.html' + (c ? '?c=' + c : (activeG ? '?g=' + activeG : ''));
+      history.replaceState(null, '', url);
+      render();
+    }
+
+    function render() {
+      filtersEl.innerHTML = '';
+      function mk(label, isOn, onClick, n) {
+        var b = document.createElement('button');
+        b.setAttribute('role', 'tab');
+        b.setAttribute('aria-selected', isOn ? 'true' : 'false');
+        b.innerHTML = CHPApp.esc(label) + (typeof n === 'number' ? ' <span class="n">' + n + '</span>' : '');
+        if (isOn) b.classList.add('on');
+        b.addEventListener('click', onClick);
+        filtersEl.appendChild(b);
+      }
+      mk('All', !activeC && !group, function () { setActive(null, null); });
+      valid.forEach(function (slug) {
+        var on = activeC === slug;
+        mk(CHP.collections[slug].name, on, function () { setActive(slug, null); }, CHPApp.countIn(slug));
       });
-    });
 
-    grid.innerHTML = '';
-    // Group products by collection group for display
-    if (active === 'all') {
-      COLLECTION_GROUPS.forEach(g => {
-        const items = Object.entries(ALL_PRODUCTS).filter(([id, p]) => g.collections.includes(p.collection));
-        if (items.length === 0) return;
-        grid.innerHTML += `<h3 style="text-align:center;font-size:28px;font-weight:400;margin:48px 0 24px;">${g.name}</h3>`;
-        items.forEach(([id, p]) => {
-          grid.innerHTML += `
-            <a class="card" href="product.html?id=${id}">
-              <img loading="lazy" src="${p.image}" alt="${p.title}">
-              <div class="card-label">${p.title}</div>
-              <div class="card-meta">from $${fromPrice(p)} · ${p.options.length} sizes</div>
-            </a>`;
+      var pairs = currentPairs();
+      CHPApp.renderGrid(grid, pairs);
+
+      // Lightbox: click a card to view large
+      grid.querySelectorAll('.card').forEach(function (card, i) {
+        card.addEventListener('click', function (e) {
+          // Let modifier/ long-press open the photo page normally
+          if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+          e.preventDefault();
+          CHPApp.openLightbox(pairs, i);
         });
       });
-    } else {
-      Object.entries(ALL_PRODUCTS).forEach(([id, p]) => {
-        if (p.collection !== active) return;
-        grid.innerHTML += `
-          <a class="card" href="product.html?id=${id}">
-            <img loading="lazy" src="${p.image}" alt="${p.title}">
-            <div class="card-label">${p.title}</div>
-            <div class="card-meta">from $${fromPrice(p)} · ${p.options.length} sizes</div>
-          </a>`;
-      });
     }
-  }
-  render();
+
+    render();
+
+  });
 </script>
 </body>
 </html>
