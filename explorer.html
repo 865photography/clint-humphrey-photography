@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explorer — Clint Humphrey Photography</title>
+<meta name="description" content="Search and filter Clint Humphrey's fine-art wildlife photographs by keyword, collection, and more.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Clint Humphrey Photography">
+<meta property="og:title" content="Explorer — Clint Humphrey Photography">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<a class="skip-link" href="#results">Skip to results</a>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">Clint Humphrey<small>Photography</small></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="gallery.html">Gallery</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap page-top">
+  <h1 style="font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,38px);margin:0 0 4px;">Explorer</h1>
+  <p style="color:var(--muted);margin:0;max-width:62ch;">Search titles and descriptions, or narrow by collection.</p>
+
+  <div class="explorer-bar">
+    <div class="search-row">
+      <input type="search" id="q" placeholder="Search — try &quot;osprey&quot;, &quot;dive&quot;, &quot;tiger&quot;&hellip;" aria-label="Search photographs" autocomplete="off">
+    </div>
+    <div class="filter-row">
+      <select id="f-collection" aria-label="Filter by collection">
+        <option value="">All collections</option>
+      </select>
+      <select id="f-sort" aria-label="Sort results">
+        <option value="curated">Curated order</option>
+        <option value="title">Title A–Z</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+      </select>
+      <label class="check"><input type="checkbox" id="f-featured"> Featured only</label>
+    </div>
+  </div>
+
+  <p class="result-count" id="count" aria-live="polite"></p>
+  <div class="masonry" id="results"></div>
+  <div class="empty-note" id="empty" hidden>No photographs match. Try a different search.</div>
+  <noscript><p style="color:var(--muted)">Search needs JavaScript — <a href="gallery.html">browse the gallery</a> instead.</p></noscript>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 Clint Humphrey Photography. All images copyright the artist.</p>
+    <nav aria-label="Footer">
+      <a href="gallery.html">Gallery</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var q = document.getElementById('q');
+    var fColl = document.getElementById('f-collection');
+    var fSort = document.getElementById('f-sort');
+    var fFeat = document.getElementById('f-featured');
+    var results = document.getElementById('results');
+    var count = document.getElementById('count');
+    var empty = document.getElementById('empty');
+
+    // Collection options — only populated collections, never empty
+    CHPApp.populatedCollections().forEach(function (slug) {
+      var o = document.createElement('option');
+      o.value = slug;
+      o.textContent = CHP.collections[slug].name + ' (' + CHPApp.countIn(slug) + ')';
+      fColl.appendChild(o);
+    });
+
+    // Preselect from query string (?featured=1 from homepage)
+    if (new URLSearchParams(location.search).get('featured') === '1') fFeat.checked = true;
+
+    function run() {
+      var term = q.value.trim().toLowerCase();
+      var coll = fColl.value;
+      var featOnly = fFeat.checked;
+      var featuredSet = {};
+      CHP.featured.forEach(function (id) { featuredSet[id] = true; });
+
+      var pairs = CHP.order
+        .map(function (id) { return [id, CHP.products[id]]; })
+        .filter(function (pair) {
+          var id = pair[0], p = pair[1];
+          if (coll && p.collection !== coll) return false;
+          if (featOnly && !featuredSet[id]) return false;
+          if (term) {
+            var hay = (p.title + ' ' + (p.tagline || '') + ' ' + (p.story || '') + ' ' +
+              CHP.collections[p.collection].name).toLowerCase();
+            if (hay.indexOf(term) === -1) return false;
+          }
+          return true;
+        });
+
+      var sort = fSort.value;
+      if (sort === 'title') pairs.sort(function (a, b) { return a[1].title.localeCompare(b[1].title); });
+      else if (sort === 'price-asc') pairs.sort(function (a, b) { return CHPApp.fromPrice(a[1]) - CHPApp.fromPrice(b[1]); });
+      else if (sort === 'price-desc') pairs.sort(function (a, b) { return CHPApp.fromPrice(b[1]) - CHPApp.fromPrice(a[1]); });
+
+      CHPApp.renderGrid(results, pairs);
+      count.textContent = pairs.length + (pairs.length === 1 ? ' photograph' : ' photographs');
+      empty.hidden = pairs.length > 0;
+      results.style.display = pairs.length ? '' : 'none';
+    }
+
+    ['input', 'change'].forEach(function (ev) {
+      q.addEventListener(ev, run);
+      fColl.addEventListener(ev, run);
+      fSort.addEventListener(ev, run);
+      fFeat.addEventListener(ev, run);
+    });
+    run();
+  });
+</script>
+</body>
+</html>
