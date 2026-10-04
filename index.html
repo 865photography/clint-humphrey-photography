@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clint Humphrey Photography — Fine-Art Prints</title>
-<meta name="description" content="Fine-art photographic prints by Clint Humphrey — wildlife, birds of prey, Americana, and golden-hour landscapes. Printed to order, shipped worldwide.">
+<meta name="description" content="Fine-art photographic prints by Clint Humphrey — birds, mammals, and Americana. Printed to order, shipped worldwide.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Clint Humphrey Photography">
 <meta property="og:title" content="Clint Humphrey Photography — Fine-Art Prints">
-<meta property="og:description" content="Fine-art prints from original frames. Printed to order, shipped worldwide.">
 <meta property="og:image" content="https://clint-humphrey-photography.vercel.app/images/new/amber-eye.jpg">
 <meta property="og:url" content="https://clint-humphrey-photography.vercel.app/">
 <link rel="stylesheet" href="css/style.css">
@@ -26,16 +25,7 @@
   </div>
 </header>
 
-<div class="hero-light">
-  <h1>Clint Humphrey<br>Photography</h1>
-  <p>Fine-art prints from original frames — wildlife, birds, and American light. Printed to order by a professional lab, shipped worldwide.</p>
-</div>
-
-<div id="groups"></div>
-
-<h2 class="section-title">Featured prints</h2>
-<p class="section-sub">A few frames the studio keeps coming back to.</p>
-<div class="cards" id="featured"></div>
+<div id="groups" style="padding-top:64px"></div>
 
 <section class="band">
   <h2>Printed like it matters.</h2>
@@ -90,15 +80,10 @@
 <script src="js/products-new.js"></script>
 <script src="js/collections.js"></script>
 <script>
-  // Grouped collections: Birds (with sub-collections), Mammals, Americana
+  // Homepage: collection groups as large cards, like the reference
   const groupsEl = document.getElementById('groups');
   COLLECTION_GROUPS.forEach(g => {
-    let html = `<h2 class="section-title">${g.name}</h2>`;
-    if (g.collections.length > 1) {
-      html += `<p class="section-sub"></p><div class="coll-grid">`;
-    } else {
-      html += `<div class="coll-grid">`;
-    }
+    let html = `<h2 class="section-title">${g.name}</h2><div class="coll-grid">`;
     g.collections.forEach(slug => {
       const meta = COLLECTION_META[slug];
       const n = countInCollection(slug);
@@ -114,21 +99,6 @@
     groupsEl.innerHTML += html;
   });
 
-  // Featured prints
-  const featuredIds = ['amber-eye', 'the-crane', 'killdeer', 'touchdown', 'wings-up', 'iridescence'];
-  const grid = document.getElementById('featured');
-  featuredIds.forEach(id => {
-    const p = ALL_PRODUCTS[id];
-    if (!p) return;
-    grid.innerHTML += `
-      <a class="card" href="product.html?id=${id}">
-        <img loading="lazy" src="${p.image}" alt="${p.title}">
-        <div class="card-label">${p.title}</div>
-        <div class="card-meta">from $${fromPrice(p)}</div>
-      </a>`;
-  });
-
-  // Footer collections
   const foot = document.getElementById('foot-colls');
   COLLECTION_ORDER.forEach(slug => {
     foot.innerHTML += `<li><a href="gallery.html?c=${slug}">${collectionName(slug)}</a></li>`;
